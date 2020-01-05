@@ -2,6 +2,16 @@
 
 This repository holds Technical interview questions for the Senior Android Developer position which has been was asked from me or I usually ask from candidates. Feel free to contribute and improve it.
 
+## Table of contents
+* [General questions](#general-questions)
+* [Object Oriented Programming](#object-oriented-programming)
+* [Java Programming](#java-programming)
+* [Android Foundation](#android-foundation)
+* [Android UI Design](#android-ui-design)
+* [Software Architecture Design](#software-architecture-design)
+* [Testing](#testing)
+* [License](#license)
+
 
 ## General questions
 
@@ -27,11 +37,17 @@ This repository holds Technical interview questions for the Senior Android Devel
 
 7. #### What’s your weakness and power in Android development?
 
-8. #### Are you familiar with Agile, SCRUM, Sprint, Jira, Trello, ...?
+8. #### What project management tools have you used before?
+- Jira
+- Trello
 
-9. #### What are the aspects of your job that you really enjoy?
+9. #### Are you familiar with Agile, SCRUM, Sprint, , ...?
 
-10. #### What is GitFlow? do you follow it?
+10. #### What are the aspects of your job that you really enjoy?
+
+11. #### What is GitFlow? do you follow it?
+
+12. #### Describe Test-Driven Development (TDD).
 
 
 ## Object Oriented Programming
@@ -84,7 +100,7 @@ to avoid multiple implementations of the constructor for setting different field
 7. #### What is the difference between Abstract Class and Interface?
 
 
-## Java
+## Java Programming
 
 1. #### What are the differences between a `SparseArray` and `Hashmap`?
 - Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (HashMap <Integer, V>).
@@ -139,97 +155,118 @@ Using StringBuilder and StringBuffer/StringBuilder
 
 9. #### What is a generic in java?
 
+10. #### Why should the equals() and hashCode() methods often be overridden together?
 
-## َAndroid Foundation
+11. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
+Yes!
 
-1. #### What’s Android Runtime ( ART ) and Dalvik?
+12. #### Explain method overloading & overriding.
+
+13. #### What is Java's Garbage Collection and how does it help you as a developer?
+
+
+## Android Foundation
+
+1. #### What is ADB (Android Debug Bridge)?
+
+2. #### What is ANR (Application not responding)?
+
+3. #### What’s Android Runtime (ART) and Dalvik?
 - Android runtime (ART) is the managed runtime used by applications and some system services on Android.
 - Dalvik is the predecessor of ART
 - ART as the runtime executes the Dalvik Executable format and Dex bytecode specification.
 
-2. #### What is a 9patch image? does it tile or stretch?
-9 Patch images are stretchable, repeatable images reduced to their smallest size
-
-3. #### What is the difference between intent , sticky intent , and pending intent?
+5. #### What is the difference between `intent` , `sticky intent` , and `pending intent`?
 - intent - is a message-passing mechanism between components of android except for Content Provider
 - Sticky Intent - Sticks with Android, for future broadcast listeners
 - Pending Intent - Will be used when someone wants to fire an intent in the future and maybe at that time the app is not alive anymore.
 
-4. #### How can we transfer objects between activities?
-- Parcelable which is better for Android apps than Serialisable which uses reflection
+6. #### How can we transfer objects between activities?
+- Parcelable which is better for Android apps than Serializable which uses reflection
 
-5. #### What kind of modes of concurrency are in Android?
+7. #### What is the difference between `Serializable` and `Parcelable`? Which is the best approach in Android?
+
+8. #### What kind of modes of concurrency are in Android?
 - Threads
 - Async tasks
 - Services
 - Kotlin Coroutines
 
-6. #### What is the difference between Service & IntentService?
+9. #### What is the difference between `Service` & `IntentService`?
 - IntentService is used for short tasks and a Service is for long ones
 - IntentService runs in the App process but Service runs in a separate process.
 
-7. #### What are the Android launch modes?
+10. #### What are the Android launch modes?
 - standard (default): The system always creates a new instance of the activity in the target task and routes the intent to it.
 - singleTop: If an instance of the activity already exists at the top of the target task, the system routes the intent to that instance through a call to its onNewIntent() method, rather than creating a new instance of the activity.
 - singleTask: The system creates the activity at the root of a new task and routes the intent to it. However, if an instance of the activity already exists, the system routes the intent to the existing instance through a call to its onNewIntent() method, rather than creating a new one.
 - singleInstance: Same as "singleTask", except that the system doesn't launch any other activities into the task holding the instance. The activity is always the single and only member of its task.
 
-8. #### Are you familiar with ProGuard?
-used for obfuscation
+11. #### Are you familiar with ProGuard?
+free obfuscation tool, DexGuard is the enterprise version of ProGuard.
 
-9. #### What is a Broadcast Receiver? What kind of messages it can receive?
+12. #### What is a Broadcast Receiver? What kind of messages it can receive?
 - simply respond to broadcast messages from other applications or from the system itself
 - must be Created and Registered within manifest or programmatically
 
-10. #### What are the essential building blocks of an Android application?
+13. #### What are the essential building blocks of an Android application?
 - Activities: They dictate the UI and handle the user interaction to the smartphone screen.
 - Services: They handle background processing associated with an application.
 - Broadcast Receivers: They handle communication between Android OS and applications.
 - Content Providers: They handle data and database management issues.
 - Intents: Communication between the above-mentioned components is through Intents.
 
-11. #### What is the Intent?
+14. #### What is the Intent?
 - Intents define the intention of an Application. S simple message object which is used to transfer data between activities.
 - explicit intent: used to launch a specific application component
 - implicit intent: specifies an action that can invoke any app on the device able to perform that action
 
-12. #### What is a Service?
+15. #### What is a Service?
 - A Service is an application component that can perform long-running operations in the background and does not provide a user interface.
 - a component can bind to a service to interact with it and even perform interprocess communication (IPC) if it is running in a separate process
 
-13. #### How can Activity communicate with services?
+16. #### How can Activity communicate with services?
 - Binding services
 - Using Callbacks interfaces
 
-14. #### What is ContentProvider?
+17. #### What is ContentProvider?
 - They encapsulate data and provide it to applications through the single ContentResolver interface.
 - Used for providing the content between applications
 - A content provider is only required if you need to share data between multiple applications.
 
-15. #### What is an Adapter?
+18. #### What is an Adapter?
 - The adapter is an interface whose implementations provide data and the display of that data done by the ListView/RecyclerView.
 - ListViews and RecyclerView do not actually contain any data themselves. They are just a UI without data in it.
 
-16. #### What’s the difference between Activity Context and Application Context?
+19. #### What’s the difference between Activity Context and Application Context?
 - They are both instances of Context , but the application instance is tied to the lifecycle of the application, while the Activity instance is tied to the lifecycle of the Activity.
 - They have access to different information about the application environment.
 
-17. #### Have you used Android annotations (e.g. IntegerRes, IntDef, ...)?
+20. #### Have you used Android annotations (e.g. IntegerRes, IntDef, ...)?
 
-18. #### Like to work on Android app Backend (core) or UI (view)?
+21. #### Like to work on Android app Backend (core) or UI (view)?
 
-19. #### Explain the Activity lifecycle?
+22. #### Explain the Activity lifecycle?
 
-20. #### What is a Fragment?
+23. #### What is a Fragment?
 
-21. #### Do you have any experience with NDK?
+24. #### Do you have any experience with NDK?
 
-22. #### Do you have any experience with Bluetooth and BLE Android API?
+25. #### Do you have any experience with Bluetooth and BLE Android API?
 
-23. #### Have you used Canvas in UI?
+27. #### What are the ways we can store information in an Android app?
 
-24. #### What are the ways we can store information in an Android app?
 
+## Android UI Design
+
+1. #### How we can present different styles/drawables for a button depending on the state of the button (pressed, selected, etc.) using XML?
+
+2. #### What is the difference between View.GONE and View.INVISIBLE?
+
+3. #### Have you used Canvas in UI?
+
+4. #### What is a 9patch image? does it tile or stretch?
+9 Patch images are stretchable, repeatable images reduced to their smallest size
 
 ## َAndroid Libraries
 
@@ -264,7 +301,7 @@ used for obfuscation
 7. #### Have you used Mockito?
 
 
-## Architecture
+## Software Architecture Design
 
 1. #### Why we should use MVP / MVVM architectures?
 - to avoid too much logic code in the UI layer and god activities
@@ -289,7 +326,7 @@ used for obfuscation
 - help wiring different elements together
 
 
-## Test
+## Testing
 
 1. #### Are you familiar with Unit testing?
 
