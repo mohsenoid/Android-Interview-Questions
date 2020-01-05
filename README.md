@@ -1,6 +1,8 @@
 # Android Interview Questions
 
-This repository holds Technical interview questions for the Senior Android Developer position which has been was asked from me or I usually ask from candidates. Feel free to contribute and improve it.
+![Icon](icon.png)
+
+This repository holds technical interview questions for the Senior Android Developer position which has been was asked from me or I usually ask from other candidates. Feel free to contribute and improve it.
 
 ## Table of contents
 * [General questions](#general-questions)
