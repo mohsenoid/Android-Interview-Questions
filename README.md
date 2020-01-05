@@ -94,6 +94,10 @@ This repository holds technical interview questions for the Senior Android Devel
 12. #### Why we use the builder design pattern? How Kotlin improves this use case?
    * to avoid multiple implementations of the constructor for setting different fields in a class.
 13. #### What is the difference between Abstract Class and Interface?
+14. #### What are the types of GoF ([Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns)) design patterns? Provide examples.
+   * Creational
+   * Structural
+   * Behavioral.
 
 ## Java Programming
 1. #### What are the differences between a `SparseArray` and `Hashmap`?
@@ -145,7 +149,8 @@ This repository holds technical interview questions for the Senior Android Devel
 11. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
    * Yes!
 12. #### Explain method overloading & overriding.
-13. #### What is Java's Garbage Collection and how does it help you as a developer?
+13. #### What is Java's Garbage Collection and how does it help you as a developer? Can two objects be garbage collected if they reference to each other?
+   *  Cyclic dependencies without any live external reference are also eligible for GC.
 14. #### Why are Array and ArrayList different? When would you use each?
    * Resizable: Array is static in size that is fixed length data structure, One can not change the length after creating the Array object. ArrayList is dynamic in size.
    * Multi-dimensional: Array can be multi dimensional , while ArrayList is always single dimensional.
@@ -163,6 +168,14 @@ This repository holds technical interview questions for the Senior Android Devel
 18. #### What are `transient` and `volatile` modifiers?
    * transient: modifier tells the Java object serialization subsystem to exclude the field when serializing an instance of the class
    * volatile: modifier tells the JVM that writes to the field should always be synchronously flushed to memory, and that reads of the field should always read from memory.
+19. #### How to implement thread safe counter.
+   * Use AtomicInteger.
+20. #### What are the states of Thread in Java?
+   * New, Runnable, Blocked, Waiting, TimedWaiting, Terminated.
+21. #### How to make object thread safe without synchronisation?
+   * Make it immutable.
+22. #### Explain how wait/notify mechanism works.
+23. #### Describe implementation of HashMap. What is collision? Difference between HashSet and TreeSet?
 
 ## Android Foundation
 1. #### What is ADB (Android Debug Bridge)?
@@ -231,10 +244,14 @@ This repository holds technical interview questions for the Senior Android Devel
 25. #### What are the ways we can store information in an Android app?
 26. #### Why should you avoid to run non-UI code on the main thread?
 27. #### What do you use `SharedPreferences`/`database` for? Why? Do you encrypt anything you store? How?
+25. #### What is the size of the Bundle in Android. What can happen if pass large amount of data inside Intents?
+   * ~500kb
+   * TransactionTooLargeException may be thrown by the system.
+26. #### What is memory leak. How to test app for memory leaks.
 
 ## Android UI Design
 1. #### How we can present different styles/drawables for a button depending on the state of the button (pressed, selected, etc.) using XML?
-2. #### What is the difference between View.GONE and View.INVISIBLE?
+2. #### What is the difference between `View.GONE` and `View.INVISIBLE`?
 3. #### Have you used Canvas in UI?
 4. #### What is a 9patch image? does it tile or stretch?
    * 9 Patch images are stretchable, repeatable images reduced to their smallest size
@@ -281,13 +298,17 @@ According to this concept a class should not configure its dependencies statical
    * useful for decoupling the whole system
    * allow easier unit testing
    * much easier moving things around and keeping classes small and simple
-   * help wiring different elements together
+   * help wiring different elements 
+5. #### Explain dependency rule in Clean Architecture.
+In Clean Architecture by Robert C. Martin the dependency rule points strictly from the outermost layer/ring to the innermost.
 
 ## Testing
 1. #### Are you familiar with Unit testing?
 2. #### what does Unit Testing suppose to do?
    * Unit testing involves breaking your program into pieces and subjecting each piece to a series of tests.
    * These tests can run on a Continues Integration (CI) (namely GitHub actions, Circle Ci, or Travis Ci) and keep the code quality
+3. #### How to write testable code? What things make code hard to test?
+   * Hard dependencies, static methods.
 
 ## License
 Copyright 2020 Mohsen Mirhoseini Argi
