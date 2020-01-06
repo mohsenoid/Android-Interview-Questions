@@ -17,13 +17,14 @@ This repository holds technical interview questions for the Senior Android Devel
 1. #### What were your last 3 applications? which was the best? and why?
 2. #### What was the most challenging thing you have done in an application?
 3. #### Which websites and blogs you use as Android references?
-   * developer.android
-   * StackOverflow
-   * Medium.com
-   * Android weekly newsletter
-   * Kotlin weekly newsletter
-   * Caster.io
-   * Droidcon.com
+   * [developer.android](https://developer.android.com/)
+   * [StackOverflow](https://stackoverflow.com/questions/tagged/android)
+   * [Medium.com](https://medium.com/)
+   * [Android weekly newsletter](https://androidweekly.net/)
+   * [Kotlin weekly newsletter](http://www.kotlinweekly.net/)
+   * [Caster.io](https://caster.io/)
+   * [Droidcon.com](https://www.droidcon.com/)
+   * [KotlinConf.com](https://kotlinconf.com/)
 4. #### Why do you consider yourself a Senior Developer? Who is a senior developer? What is the definition of being a Senior Developer?
    * Being senior is mostly about sharing, your knowledge, experience, time, ...
 5. #### Do you do any Documentations?
@@ -31,6 +32,7 @@ This repository holds technical interview questions for the Senior Android Devel
 7. #### What’s your weakness and power in Android development?
 8. #### What project management tools have you used before?
    * Jira
+   * asana
    * Trello
 9. #### Are you familiar with Agile, SCRUM, Sprint, , ...?
 10. #### What are the aspects of your job that you really enjoy?
@@ -44,9 +46,9 @@ This repository holds technical interview questions for the Senior Android Devel
    * Inheritance
    * Polymorphism
 2. #### What are the access modifiers you know? What does each one do?
-   * Public
-   * Private
-   * Protected
+   * `public`: modifier is widely-used on classes, variables, constructors and methods to grant access from any class and method anywhere.
+   * `private` (by default) : variables, methods, constructors or inner classes are only visible to its' containing class and its' methods.
+   * `protected`: can be used on variables, methods and constructors therefore allowing access only to subclasses and classes that are inside the same package as protected members' class.
 3. #### What is the difference between overriding and overloading a method in Java?
    * Overload (one method with different signature)
    * @Override
@@ -60,10 +62,20 @@ This repository holds technical interview questions for the Senior Android Devel
 7. #### Can a constructor be inherited?
    * Constructors are not members of classes and only members are inherited.
 8. #### Which Design Patterns you are familiar with?
-   * Singleton
-   * Builder
-   * Factory
-   * Adapter
+   * Creational patterns
+      * Builder
+      * Factory
+      * Singleton
+      * Monostate
+      * Fluent Interface Pattern
+   * Structural patterns
+      * Adapter
+      * Decorator
+      * Facade
+   * Behavioural patterns
+      * Chain of responsibility
+      * Iterator
+      * Strategy
 9. #### Which design patterns are used in Android?
    * `View Holder` uses Singleton
    * `Intent` uses Factory
@@ -72,7 +84,7 @@ This repository holds technical interview questions for the Senior Android Devel
    * Media FrameWork uses Façade
    * `Toast.makeText()` uses Factory
 10. #### What is the difference between Composition and Inheritance? How we should decide which one to use?
-   * Using **is** vs **has** rule
+   * Using **is** vs **has** rule (Cat is an Animal / Person has a Job)
 11. #### Do you know SOLID (object-oriented design)?
    * **S**ingle responsibility principle:
       * A class should have only a single responsibility (i.e. only one potential change in the software’s specification should be able to affect the specification of the class
@@ -176,6 +188,25 @@ This repository holds technical interview questions for the Senior Android Devel
    * Make it immutable.
 22. #### Explain how wait/notify mechanism works.
 23. #### Describe implementation of HashMap. What is collision? Difference between HashSet and TreeSet?
+24. #### Whether static method can use nonstatic members?
+- NO
+25. #### Do objects get passed by reference or value in Java?
+   * In Java all primitives and objects are passed by value, meaning that their copy will be manipulated in the receiving method. But there is a caveat - when you pass an object reference into a method, a copy of this reference is made, so it still points to the same object! This means, that any changes that you make inside this object are retained, when the method exits.
+26. #### What is the difference between instantiation and initialization of an object?
+   * Initialization: is the process of the memory allocation, when a new variable is created.
+   * Instantiation: is the process of explicitly assigning definitive value to a declared variable.
+27. #### What is GC (garbage collector)? How does it work?
+   * All objects are allocated on the heap area managed by the JVM. As long as an object is being referenced, the JVM considers it alive. Once an object is no longer referenced and therefore is not reachable by the application code, the garbage collector removes it and reclaims the unused memory.
+28. #### What is volatile modifier?
+   * The Java volatile keyword is used to mark a Java variable as "being stored in main memory", and not from the CPU cache.
+29. #### What is `transient` modifier?
+   * keyword is used in serialization. If you define any data member as transient, it will not be serialized.
+
+## Kotlin programming
+1. #### Have you tried Kotlin?
+2. #### What are Coroutines in Kotlin?
+3. #### What is Sealed Class in Kotlin?
+   * power enum
 
 ## Android Foundation
 1. #### What is ADB (Android Debug Bridge)?
@@ -304,11 +335,16 @@ In Clean Architecture by Robert C. Martin the dependency rule points strictly fr
 
 ## Testing
 1. #### Are you familiar with Unit testing?
-2. #### what does Unit Testing suppose to do?
+2. #### Explain unit test? What does Unit Testing suppose to do?
    * Unit testing involves breaking your program into pieces and subjecting each piece to a series of tests.
    * These tests can run on a Continues Integration (CI) (namely GitHub actions, Circle Ci, or Travis Ci) and keep the code quality
 3. #### How to write testable code? What things make code hard to test?
    * Hard dependencies, static methods.
+4. #### Explain instrumented test?
+5. #### What is Espresso?
+6. #### What is Robolectric?
+7. #### Why we use Mockito?
+
 
 ## License
 Copyright 2020 Mohsen Mirhoseini Argi
