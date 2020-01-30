@@ -116,20 +116,85 @@ This repository holds technical interview questions for the Senior Android Devel
    * Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (HashMap <Integer, V>).
    * is made to be memory efficient than using the regular HashMap
    * It is generally slower than a traditional HashMap
+   
 2. #### What are the differences between a `LinkedList` vs `ArrayList`?
    * two different implementations of the List interface
    * LinkedList implements it with a doubly-linked list.
    * ArrayList implements it with a dynamically re-sizing array.
    * LinkedList is better for working with stacks mostly, or when working with buffers.
    * ArrayList is best for working with indexes.
-3. #### What is a Deadlock In java?
+   
+3. #### What is the difference between HashSet, HashMap and Hashtable? How do they behave in a multi-threaded environment?
+   
+   - ##### Hashtable
+   
+      Hashtable is basically a data structure to retain values of key-value pair.
+   
+      - It does not allow null for both key and value. It will throw NullPointerException.
+      - Hashtable does not maintain insertion order. The order is defined by the Hash function. So only use this if you do not need data in order.
+      - It is synchronized. It is slow. Only one thread can access in one time.
+      - HashTable rea thread safe.
+      - HashTable uses Enumerator to iterate through elements.
+   
+      ```java
+      Hashtable<Integer,String>; myTable = new Hashtable<Integer,String>();
+      
+      myTable.put(1, "John");
+      myTable.put(2, "Cena");
+      myTable.put(3, null); /* NullPointerEcxeption at runtime*/
+      
+      System.out.println(myTable.get(1));
+      System.out.println(myTable.get(2));
+      System.out.println(myTable.get(3));
+      ```
+   
+   - ##### HashMap
+   
+     Like Hashtable it also accepts key value pair.
+   
+     - It allows null for both key and value.
+     - HashMap does not maintain insertion order. The order is defined by the Hash function.
+     - It is not synchronized. It will have better performance.
+     - HashMap are not thread safe, but you can use Collections.synchronizedMap(new HashMap<K,V>())
+   
+     ```java
+     HashMap<Integer,String> myMap = new HashMap<Integer,String>();
+     
+     myMap.put(1, "First");
+     myMap.put(2,"Second");
+     myMap.put(3, null);
+     ```
+   
+   - ##### HashSet
+   
+     HashSet does not allow duplicate values.
+   
+     - It provides add method rather put method.
+     - You also use its contain method to check whether the object is already available in HashSet. HashSet can be used where you want to maintain a unique list.
+   
+     ```java
+     HashSet<String> mySet = new HashSet<String>();
+     
+     mySet.add ("First");
+     mySet.add ("Second");
+     mySet.add ("Third");
+     
+     if(mySet.contains("First")){
+     	System.out.println("The Set already contains First");
+     }
+     ```
+   
+4. #### What is a Deadlock In java?
+
    * Deadlock describes a situation where two or more threads are blocked forever, waiting for each other.
-4. #### How we can avoid Deadlocks?
+
+5. #### How we can avoid Deadlocks?
    * Breaking circular wait condition: In order to do that, you can make arrangements in the code to impose the ordering on acquisition and release of locks.
    * Avoid Nested Locks: This is the most common reason for deadlocks, avoid locking another resource if you already hold one. It’s almost impossible to get a deadlock situation if you are working with only one object lock.
    * Lock Only What is Required: You should acquire lock only on the resources you have to work on, if we are only interested in one of its fields, then we should lock only that specific field, not complete object.
    * Avoid waiting indefinitely: You can get a deadlock if two threads are waiting for each other to finish indefinitely using thread join. If your thread has to wait for another thread to finish, it’s always best to use join with the maximum time you want to wait for the thread to finish.
-5. #### What is the difference between a process and a thread in Java/Android?
+
+6. #### What is the difference between a process and a thread in Java/Android?
    * A program in execution is often referred to as Process. A thread is a part of the process.
    * A process consists of multiple threads. A thread is the smallest part of the process that can execute concurrently with other threads of the process.
    * A process is sometimes referred to as “Task”. A thread is often referred to as a “Lightweight” process.
@@ -137,7 +202,8 @@ This repository holds technical interview questions for the Senior Android Devel
    * A thread can communicate with other threads (of the same process) directly by using methods like wait(), notify(), notifyAll(). A process can communicate with another process by using inter-process communication (IPC/AIDL).
    * New threads are easily created. However, the creation of new processes requires duplication of the parent process.
    * Threads have control over the other threads of the same process. A process does not have control over the sibling process, it has control over its child processes only.
-6. #### What’s new in the Android 10 (Q) version?
+
+7. #### What’s new in the Android 10 (Q) version?
    * Foldables screens
    * 5G networks
    * Smart Reply in notifications
@@ -150,15 +216,20 @@ This repository holds technical interview questions for the Senior Android Devel
    * Camera and media -> Dynamic depth for photos
    * Connectivity
    * ART optimizations
-7. #### How do you manipulate strings in Java without creating String garbage?
+
+8. #### How do you manipulate strings in Java without creating String garbage?
    * Using StringBuilder and StringBuffer/StringBuilder
-8. #### What is the basic difference between String and StringBuffer?
+
+9. #### What is the basic difference between String and StringBuffer?
    * The string is an immutable object. StringBuffer is a mutable object.
    * StringBuffer is synchronized whereas StringBuilder is not synchronized.
-9. #### What is a generic in java?
+
+10. #### What is a generic in java?
    * Stronger type checks at compile time. A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety.
-10. #### Why should the equals() and hashCode() methods often be overridden together?
-11. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
+
+11. #### Why should the equals() and hashCode() methods often be overridden together?
+
+12. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
    * Yes!
 12. #### Explain method overloading & overriding.
 13. #### What is Java's Garbage Collection and how does it help you as a developer? Can two objects be garbage collected if they reference to each other?
@@ -267,15 +338,26 @@ This repository holds technical interview questions for the Senior Android Devel
    * They are both instances of Context , but the application instance is tied to the lifecycle of the application, while the Activity instance is tied to the lifecycle of the Activity.
    * They have access to different information about the application environment.
 19. #### Have you used Android annotations (e.g. IntegerRes, IntDef, ...)?
+
 20. #### Like to work on Android app Backend (core) or UI (view)?
+
 21. #### Explain the Activity lifecycle?
-22. #### What is a Fragment?
-23. #### Do you have any experience with NDK?
-24. #### Do you have any experience with Bluetooth and BLE Android API?
-25. #### What are the ways we can store information in an Android app?
-26. #### Why should you avoid to run non-UI code on the main thread?
-27. #### What do you use `SharedPreferences`/`database` for? Why? Do you encrypt anything you store? How?
-25. #### What is the size of the Bundle in Android. What can happen if pass large amount of data inside Intents?
+
+22. #### We have 3 Activities (A, B, and C which is transparent) explain what is the sequence of lifecycle methods execution if we 1) go from A to B, 2) then B to C, 3) Rotate the phone, 4) press back to B, 5) press back to A!!?
+
+23. #### What is a Fragment?
+
+24. #### Do you have any experience with NDK?
+
+25. #### Do you have any experience with Bluetooth and BLE Android API?
+
+26. #### What are the ways we can store information in an Android app?
+
+27. #### Why should you avoid to run non-UI code on the main thread?
+
+28. #### What do you use `SharedPreferences`/`database` for? Why? Do you encrypt anything you store? How?
+
+29. #### What is the size of the Bundle in Android. What can happen if pass large amount of data inside Intents?
    * ~500kb
    * TransactionTooLargeException may be thrown by the system.
 26. #### What is memory leak. How to test app for memory leaks.
