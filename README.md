@@ -15,8 +15,14 @@ This repository holds technical interview questions for the Senior Android Devel
 
 ## General questions
 1. #### What were your last 3 applications? which was the best? and why?
-2. #### What was the most challenging thing you have done in an application?
-3. #### Which websites and blogs you use as Android references?
+
+2. #### What is your favourite programming language? - and why?
+
+3. #### How would you describe the software lifecycle at your most recent position? What did you enjoy the most? What would have you liked to change?
+
+4. #### What was the most challenging thing you have done in an application?
+
+5. #### Which websites and blogs you use as Android references?
    * [developer.android](https://developer.android.com/)
    * [StackOverflow](https://stackoverflow.com/questions/tagged/android)
    * [Medium.com](https://medium.com/)
@@ -25,19 +31,32 @@ This repository holds technical interview questions for the Senior Android Devel
    * [Caster.io](https://caster.io/)
    * [Droidcon.com](https://www.droidcon.com/)
    * [KotlinConf.com](https://kotlinconf.com/)
-4. #### Why do you consider yourself a Senior Developer? Who is a senior developer? What is the definition of being a Senior Developer?
+
+6. #### Why do you consider yourself a Senior Developer? Who is a senior developer? What is the definition of being a Senior Developer?
    * Being senior is mostly about sharing, your knowledge, experience, time, ...
-5. #### Do you do any Documentations?
-6. #### What is your most proud Android development?
-7. #### What’s your weakness and power in Android development?
-8. #### What project management tools have you used before?
+
+7. #### Do you do any Documentations?
+
+8. #### What is your most proud Android development?
+
+9. #### What’s your weakness and power in Android development?
+
+10. #### What project management tools have you used before?
    * Jira
    * asana
    * Trello
-9. #### Are you familiar with Agile, SCRUM, Sprint, , ...?
-10. #### What are the aspects of your job that you really enjoy?
-11. #### What is GitFlow? do you follow it?
-12. #### Describe Test-Driven Development (TDD).
+
+11. #### Are you familiar with Agile, SCRUM, Sprint, , ...?
+
+12. #### What are the aspects of your job that you really enjoy?
+
+13. #### What type of team you like to work in?
+
+14. #### Teach me something!?
+
+15. #### What is GitFlow? do you follow it?
+
+16. #### Describe Test-Driven Development (TDD).
 
 ## Object Oriented Programming
 1. #### Name some of the characteristics of OOP languages
@@ -105,7 +124,9 @@ This repository holds technical interview questions for the Senior Android Devel
       * You wouldn’t wire a lamp directly to your house.
 12. #### Why we use the builder design pattern? How Kotlin improves this use case?
    * to avoid multiple implementations of the constructor for setting different fields in a class.
+
 13. #### What is the difference between Abstract Class and Interface?
+
 14. #### What are the types of GoF ([Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns)) design patterns? Provide examples.
    * Creational
    * Structural
@@ -147,7 +168,7 @@ This repository holds technical interview questions for the Senior Android Devel
       System.out.println(myTable.get(2));
       System.out.println(myTable.get(3));
       ```
-   
+
    - ##### HashMap
    
      Like Hashtable it also accepts key value pair.
@@ -156,23 +177,23 @@ This repository holds technical interview questions for the Senior Android Devel
      - HashMap does not maintain insertion order. The order is defined by the Hash function.
      - It is not synchronized. It will have better performance.
      - HashMap are not thread safe, but you can use Collections.synchronizedMap(new HashMap<K,V>())
-   
-     ```java
+
+      ```java
      HashMap<Integer,String> myMap = new HashMap<Integer,String>();
      
      myMap.put(1, "First");
      myMap.put(2,"Second");
      myMap.put(3, null);
-     ```
-   
+      ```
+
    - ##### HashSet
    
      HashSet does not allow duplicate values.
    
      - It provides add method rather put method.
      - You also use its contain method to check whether the object is already available in HashSet. HashSet can be used where you want to maintain a unique list.
-   
-     ```java
+
+      ```java
      HashSet<String> mySet = new HashSet<String>();
      
      mySet.add ("First");
@@ -182,10 +203,9 @@ This repository holds technical interview questions for the Senior Android Devel
      if(mySet.contains("First")){
      	System.out.println("The Set already contains First");
      }
-     ```
-   
-4. #### What is a Deadlock In java?
+      ```
 
+4. #### What is a Deadlock In java?
    * Deadlock describes a situation where two or more threads are blocked forever, waiting for each other.
 
 5. #### How we can avoid Deadlocks?
@@ -231,112 +251,150 @@ This repository holds technical interview questions for the Senior Android Devel
 
 12. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
    * Yes!
-12. #### Explain method overloading & overriding.
-13. #### What is Java's Garbage Collection and how does it help you as a developer? Can two objects be garbage collected if they reference to each other?
+
+13. #### Explain method overloading & overriding.
+
+14. #### What is Java's Garbage Collection and how does it help you as a developer? Can two objects be garbage collected if they reference to each other?
    *  Cyclic dependencies without any live external reference are also eligible for GC.
-14. #### Why are Array and ArrayList different? When would you use each?
+
+15. #### Why are Array and ArrayList different? When would you use each?
    * Resizable: Array is static in size that is fixed length data structure, One can not change the length after creating the Array object. ArrayList is dynamic in size.
    * Multi-dimensional: Array can be multi dimensional , while ArrayList is always single dimensional.
    * Primitives:  ArrayList can not contains primitive data types (like int , float , double) it can only contains Object while Array can contain both primitive data types as well as objects.
-15. #### What is a `ThreadPool`? Is it better than using several "simple" `Thread`s?
+
+16. #### What is a `ThreadPool`? Is it better than using several "simple" `Thread`s?
    * ThreadPool: represents a group of worker threads that are waiting for the job and reuse many times.
    * Using ThreadPool minimizes the overhead due to thread creation. Thread objects use a significant amount of memory, and in a large-scale application, allocating and deallocating many thread objects creates a significant memory management overhead.
-16. #### What are strong, soft and weak references in Java?
+
+17. #### What are strong, soft and weak references in Java?
    * Strong Reference: is the default Reference Object of a type/class
    * Weak Reference: When an object in memory is reachable only by Weak Reference Objects, it becomes automatically eligible for GC.
    * Soft Reference: Object is basically a weak Reference Object that remains in memory a bit more: normally, it resists GC cycle until memory is available and there is no risk of OutOfMemoryError
-17. #### What does the keyword synchronized mean?
+
+18. #### What does the keyword synchronized mean?
    * synchronized: is one of the tools that make your code thread safe.
    * synchronized methods can't be called in the same time from multiple threads.
-18. #### What are `transient` and `volatile` modifiers?
+
+19. #### What are `transient` and `volatile` modifiers?
    * transient: modifier tells the Java object serialization subsystem to exclude the field when serializing an instance of the class
    * volatile: modifier tells the JVM that writes to the field should always be synchronously flushed to memory, and that reads of the field should always read from memory.
-19. #### How to implement thread safe counter.
+
+20. #### How to implement thread safe counter.
    * Use AtomicInteger.
-20. #### What are the states of Thread in Java?
+
+21. #### What are the states of Thread in Java?
    * New, Runnable, Blocked, Waiting, TimedWaiting, Terminated.
-21. #### How to make object thread safe without synchronisation?
+
+22. #### How to make object thread safe without synchronisation?
    * Make it immutable.
-22. #### Explain how wait/notify mechanism works.
-23. #### Describe implementation of HashMap. What is collision? Difference between HashSet and TreeSet?
-24. #### Whether static method can use nonstatic members?
+
+23. #### Explain how wait/notify mechanism works.
+
+24. #### Describe implementation of HashMap. What is collision? Difference between HashSet and TreeSet?
+
+25. #### Whether static method can use nonstatic members?
 - NO
-25. #### Do objects get passed by reference or value in Java?
+
+26. #### Do objects get passed by reference or value in Java?
    * In Java all primitives and objects are passed by value, meaning that their copy will be manipulated in the receiving method. But there is a caveat - when you pass an object reference into a method, a copy of this reference is made, so it still points to the same object! This means, that any changes that you make inside this object are retained, when the method exits.
-26. #### What is the difference between instantiation and initialization of an object?
+
+27. #### What is the difference between instantiation and initialization of an object?
    * Initialization: is the process of the memory allocation, when a new variable is created.
    * Instantiation: is the process of explicitly assigning definitive value to a declared variable.
-27. #### What is GC (garbage collector)? How does it work?
+
+28. #### What is GC (garbage collector)? How does it work?
    * All objects are allocated on the heap area managed by the JVM. As long as an object is being referenced, the JVM considers it alive. Once an object is no longer referenced and therefore is not reachable by the application code, the garbage collector removes it and reclaims the unused memory.
-28. #### What is volatile modifier?
+
+29. #### What is volatile modifier?
    * The Java volatile keyword is used to mark a Java variable as "being stored in main memory", and not from the CPU cache.
-29. #### What is `transient` modifier?
+
+30. #### What is `transient` modifier?
    * keyword is used in serialization. If you define any data member as transient, it will not be serialized.
 
 ## Kotlin programming
 1. #### Have you tried Kotlin?
+
 2. #### What are Coroutines in Kotlin?
+
 3. #### What is Sealed Class in Kotlin?
    * power enum
 
 ## Android Foundation
 1. #### What is ADB (Android Debug Bridge)?
+
 2. #### What is ANR (Application not responding)?
+
 3. #### What’s Android Runtime (ART) and Dalvik?
    * Android runtime (ART) is the managed runtime used by applications and some system services on Android.
    * Dalvik is the predecessor of ART
    * ART as the runtime executes the Dalvik Executable format and Dex bytecode specification.
+
 4. #### What is the difference between `intent` , `sticky intent` , and `pending intent`?
    * intent: is a message-passing mechanism between components of android except for Content Provider
    * Sticky Intent: Sticks with Android, for future broadcast listeners
    * Pending Intent: Will be used when someone wants to fire an intent in the future and maybe at that time the app is not alive anymore.
+
 5. #### How can we transfer objects between activities?
    * Parcelable which is better for Android apps than Serializable which uses reflection
+
 6. #### What is the difference between `Serializable` and `Parcelable`? Which is the best approach in Android?
+
 7. #### What kind of modes of concurrency are in Android?
    * Threads
    * Async tasks
    * Services
    * Kotlin Coroutines
+
 8. #### What is the difference between `Service` & `IntentService`?
    * IntentService is used for short tasks and a Service is for long ones
    * IntentService runs in the App process but Service runs in a separate process.
+
 9. #### What are the Android launch modes?
    * standard (default): The system always creates a new instance of the activity in the target task and routes the intent to it.
    * singleTop: If an instance of the activity already exists at the top of the target task, the system routes the intent to that instance through a call to its onNewIntent() method, rather than creating a new instance of the activity.
    * singleTask: The system creates the activity at the root of a new task and routes the intent to it. However, if an instance of the activity already exists, the system routes the intent to the existing instance through a call to its onNewIntent() method, rather than creating a new one.
    * singleInstance: Same as "singleTask", except that the system doesn't launch any other activities into the task holding the instance. The activity is always the single and only member of its task.
+
 10. #### Are you familiar with ProGuard?
    * ProgGuard is a free obfuscation tool and DexGuard is the enterprise version of ProGuard.
+
 11. #### What is a Broadcast Receiver? What kind of messages it can receive?
    * simply respond to broadcast messages from other applications or from the system itself
    * must be Created and Registered within manifest or programmatically
+
 12. #### What are the essential building blocks of an Android application?
    * Activities: They dictate the UI and handle the user interaction to the smartphone screen.
    * Services: They handle background processing associated with an application.
    * Broadcast Receivers: They handle communication between Android OS and applications.
    * Content Providers: They handle data and database management issues.
    * Intents: Communication between the above-mentioned components is through Intents.
+
 13. #### What is the Intent?
    * Intents define the intention of an Application. S simple message object which is used to transfer data between activities.
    * explicit intent: used to launch a specific application component
    * implicit intent: specifies an action that can invoke any app on the device able to perform that action
+
 14. #### What is a Service?
    * A Service is an application component that can perform long-running operations in the background and does not provide a user interface.
    * a component can bind to a service to interact with it and even perform interprocess communication (IPC) if it is running in a separate process
+
 15. #### How can Activity communicate with services?
    * Binding services
    * Using Callbacks interfaces
+
 16. #### What is ContentProvider?
    * They encapsulate data and provide it to applications through the single ContentResolver interface.
    * Used for providing the content between applications
    * A content provider is only required if you need to share data between multiple applications.
+
 17. #### What is an Adapter?
    * The adapter is an interface whose implementations provide data and the display of that data done by the ListView/RecyclerView.
    * ListViews and RecyclerView do not actually contain any data themselves. They are just a UI without data in it.
+
 18. #### What’s the difference between Activity Context and Application Context?
    * They are both instances of Context , but the application instance is tied to the lifecycle of the application, while the Activity instance is tied to the lifecycle of the Activity.
    * They have access to different information about the application environment.
+
 19. #### Have you used Android annotations (e.g. IntegerRes, IntDef, ...)?
 
 20. #### Like to work on Android app Backend (core) or UI (view)?
@@ -360,16 +418,21 @@ This repository holds technical interview questions for the Senior Android Devel
 29. #### What is the size of the Bundle in Android. What can happen if pass large amount of data inside Intents?
    * ~500kb
    * TransactionTooLargeException may be thrown by the system.
-26. #### What is memory leak. How to test app for memory leaks.
+30. #### What is memory leak. How to test app for memory leaks.
 
 ## Android UI Design
 1. #### How we can present different styles/drawables for a button depending on the state of the button (pressed, selected, etc.) using XML?
+
 2. #### What is the difference between `View.GONE` and `View.INVISIBLE`?
+
 3. #### Have you used Canvas in UI?
+
 4. #### What is a 9patch image? does it tile or stretch?
    * 9 Patch images are stretchable, repeatable images reduced to their smallest size
+
 ## َAndroid Libraries
 1. #### Do you design new libraries for yourself or use others?
+
 2. #### Which Android Libraries are you familiar with?
    * Android Jetpack
    * Retrofit2
@@ -379,17 +442,22 @@ This repository holds technical interview questions for the Senior Android Devel
    * Koin
    * Picasso / Glide
    * Gson
+
 3. #### What is an **ORM**?
    * Object-relational mapping is a technique (a.k.a. design pattern) of accessing a relational database from an object-oriented language
+
 4. #### Which **ORMs** are you familiar with?
    * Room
    * DBFlow
    * OrmLite
    * Realm
+
 5. #### What is RxJava / RxAndroid?
    * A library for reactive programming
    * Works like wireframe between different layers and creates pipelines of data
+
 6. #### What is the difference between `FlatMap`, `SwitchMap`, `ConcatMap` in RxJava?
+
 7. #### Have you used Mockito?
 
 ## Software Architecture Design
@@ -399,34 +467,43 @@ This repository holds technical interview questions for the Senior Android Devel
    * avoid duplicated code between common views
    * Easier to maintain
    * we can test logic without using instrumentation tests
+
 2. #### Why the View should be implemented with an interface in MVP?
    * Because we want to decouple the code from the implementation view.
    * We want to abstract the framework used to write our presentation layer, regardless of any external dependency.
    * We want to be able to easily change the implementation of view if needed.
    * We want to follow the SOLID dependency rule to improve unit testability and in order to follow the dependency rule, high-level concepts (such as the presenter implementation) can't depend on low-level details (like the implementation view).
+
 3. #### What’s the use of interfaces in a presenter?
    * following SOLID Dependency inversion principle
+
 4. #### Why do you use dependency injection (DI / Dagger)?
 According to this concept a class should not configure its dependencies statically but should be configured from the outside = Inversion of Control
    * useful for decoupling the whole system
    * allow easier unit testing
    * much easier moving things around and keeping classes small and simple
    * help wiring different elements 
+
 5. #### Explain dependency rule in Clean Architecture.
 In Clean Architecture by Robert C. Martin the dependency rule points strictly from the outermost layer/ring to the innermost.
 
 ## Testing
 1. #### Are you familiar with Unit testing?
+
 2. #### Explain unit test? What does Unit Testing suppose to do?
    * Unit testing involves breaking your program into pieces and subjecting each piece to a series of tests.
    * These tests can run on a Continues Integration (CI) (namely GitHub actions, Circle Ci, or Travis Ci) and keep the code quality
+
 3. #### How to write testable code? What things make code hard to test?
    * Hard dependencies, static methods.
-4. #### Explain instrumented test?
-5. #### What is Espresso?
-6. #### What is Robolectric?
-7. #### Why we use Mockito?
 
+4. #### Explain instrumented test?
+
+5. #### What is Espresso?
+
+6. #### What is Robolectric?
+
+7. #### Why we use Mockito?
 
 ## License
 Copyright 2020 Mohsen Mirhoseini Argi
