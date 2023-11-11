@@ -1,7 +1,7 @@
-# Android Interview Questions
-![Android Interview Questions](icon.png)
+# Android Interview
+![Android Interview - Architecture Design Questions](images/arch.png)
 
-## Architecture Design
+## Architecture Design Questions
 
 1. #### Why we should use MVP / MVVM architectures?
 

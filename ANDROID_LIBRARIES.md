@@ -1,7 +1,7 @@
-# Android Interview Questions
-![Android Interview Questions](icon.png)
+# Android Interview
+![Android Interview - Libraries Questions](images/libraries.png)
 
-## Android Libraries
+## Android Libraries Questions
 
 1. #### Do you design new libraries for yourself or use others?
 

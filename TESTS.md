@@ -1,7 +1,7 @@
-# Android Interview Questions
-![Android Interview Questions](icon.png)
+# Android Interview
+![Android Interview - Tests Questions](images/tests.png)
 
-## Testing
+## Tests Questions
 
 1. #### Are you familiar with Unit testing?
 

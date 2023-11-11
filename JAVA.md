@@ -1,68 +1,73 @@
-# Android Interview Questions
-![Android Interview Questions](icon.png)
+# Android Interview
+![Android Interview - Java Questions](images/java.png)
 
-## Java Programming
-1. #### What are the differences between a `SparseArray` and `Hashmap`?
+## Java Programming Questions
+1. #### Why is Java said to be platform independent?
+
+   - The execution of the code does not depend upon the OS
+
+2. #### What are the differences between a `SparseArray` and `Hashmap`?
+
    * Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (HashMap <Integer, V>).
    * is made to be memory efficient than using the regular HashMap
    * It is generally slower than a traditional HashMap
-   
-2. #### What are the differences between a `LinkedList` vs `ArrayList`?
+
+3. #### What are the differences between a `LinkedList` vs `ArrayList`?
    * two different implementations of the List interface
    * LinkedList implements it with a doubly-linked list.
    * ArrayList implements it with a dynamically re-sizing array.
    * LinkedList is better for working with stacks mostly, or when working with buffers.
    * ArrayList is best for working with indexes.
-   
-3. #### What is the difference between HashSet, HashMap and Hashtable? How do they behave in a multi-threaded environment?
-   
+
+4. #### What is the difference between HashSet, HashMap and Hashtable? How do they behave in a multi-threaded environment?
+
    - ##### Hashtable
+
+   Hashtable is basically a data structure to retain values of key-value pair.
+
+   - It does not allow null for both key and value. It will throw NullPointerException.
+   - Hashtable does not maintain insertion order. The order is defined by the Hash function. So only use this if you do not need data in order.
+   - It is synchronized. It is slow. Only one thread can access in one time.
+   - HashTable rea thread safe.
+   - HashTable uses Enumerator to iterate through elements.
+
+   ```java
+   Hashtable<Integer,String>; myTable = new Hashtable<Integer,String>();
    
-      Hashtable is basically a data structure to retain values of key-value pair.
+   myTable.put(1, "John");
+   myTable.put(2, "Cena");
+   myTable.put(3, null); /* NullPointerEcxeption at runtime*/
    
-      - It does not allow null for both key and value. It will throw NullPointerException.
-      - Hashtable does not maintain insertion order. The order is defined by the Hash function. So only use this if you do not need data in order.
-      - It is synchronized. It is slow. Only one thread can access in one time.
-      - HashTable rea thread safe.
-      - HashTable uses Enumerator to iterate through elements.
-   
-      ```java
-      Hashtable<Integer,String>; myTable = new Hashtable<Integer,String>();
-      
-      myTable.put(1, "John");
-      myTable.put(2, "Cena");
-      myTable.put(3, null); /* NullPointerEcxeption at runtime*/
-      
-      System.out.println(myTable.get(1));
-      System.out.println(myTable.get(2));
-      System.out.println(myTable.get(3));
-      ```
+   System.out.println(myTable.get(1));
+   System.out.println(myTable.get(2));
+   System.out.println(myTable.get(3));
+   ```
 
    - ##### HashMap
-   
+
      Like Hashtable it also accepts key value pair.
-   
+
      - It allows null for both key and value.
      - HashMap does not maintain insertion order. The order is defined by the Hash function.
      - It is not synchronized. It will have better performance.
      - HashMap are not thread safe, but you can use Collections.synchronizedMap(new HashMap<K,V>())
 
-      ```java
+   ```java
      HashMap<Integer,String> myMap = new HashMap<Integer,String>();
      
      myMap.put(1, "First");
      myMap.put(2,"Second");
      myMap.put(3, null);
-      ```
+   ```
 
    - ##### HashSet
-   
+
      HashSet does not allow duplicate values.
-   
+
      - It provides add method rather put method.
      - You also use its contain method to check whether the object is already available in HashSet. HashSet can be used where you want to maintain a unique list.
 
-      ```java
+   ```java
      HashSet<String> mySet = new HashSet<String>();
      
      mySet.add ("First");
@@ -72,48 +77,25 @@
      if(mySet.contains("First")){
      	System.out.println("The Set already contains First");
      }
-      ```
+   ```
 
-4. #### What is a Deadlock In java?
+5. #### What is a Deadlock In java?
    * Deadlock describes a situation where two or more threads are blocked forever, waiting for each other.
 
-5. #### How we can avoid Deadlocks?
+6. #### How we can avoid Deadlocks?
    * Breaking circular wait condition: In order to do that, you can make arrangements in the code to impose the ordering on acquisition and release of locks.
    * Avoid Nested Locks: This is the most common reason for deadlocks, avoid locking another resource if you already hold one. It’s almost impossible to get a deadlock situation if you are working with only one object lock.
    * Lock Only What is Required: You should acquire lock only on the resources you have to work on, if we are only interested in one of its fields, then we should lock only that specific field, not complete object.
    * Avoid waiting indefinitely: You can get a deadlock if two threads are waiting for each other to finish indefinitely using thread join. If your thread has to wait for another thread to finish, it’s always best to use join with the maximum time you want to wait for the thread to finish.
 
-6. #### What is the difference between a process and a thread in Java/Android?
-   * A program in execution is often referred to as Process. A thread is a part of the process.
-   * A process consists of multiple threads. A thread is the smallest part of the process that can execute concurrently with other threads of the process.
-   * A process is sometimes referred to as “Task”. A thread is often referred to as a “Lightweight” process.
-   * A process has its own address space. A thread uses the process’s address space and shares it with the other threads of that process.
-   * A thread can communicate with other threads (of the same process) directly by using methods like wait(), notify(), notifyAll(). A process can communicate with another process by using inter-process communication (IPC/AIDL).
-   * New threads are easily created. However, the creation of new processes requires duplication of the parent process.
-   * Threads have control over the other threads of the same process. A process does not have control over the sibling process, it has control over its child processes only.
-
-7. #### What’s new in the Android 10 (Q) version?
-   * Foldables screens
-   * 5G networks
-   * Smart Reply in notifications
-   * Dark Theme
-   * Gesture navigation
-   * Settings Panels
-   * Sharing shortcuts
-   * Privacy for users -> more control over location permission
-   * Security
-   * Camera and media -> Dynamic depth for photos
-   * Connectivity
-   * ART optimizations
-
-8. #### How do you manipulate strings in Java without creating String garbage?
+7. #### How do you manipulate strings in Java without creating String garbage?
    * Using StringBuilder and StringBuffer/StringBuilder
 
-9. #### What is the basic difference between String and StringBuffer?
+8. #### What is the basic difference between String and StringBuffer?
    * The string is an immutable object. StringBuffer is a mutable object.
    * StringBuffer is synchronized whereas StringBuilder is not synchronized.
 
-10. #### What is a generic in java?
+9. #### What is a generic in java?
    * Stronger type checks at compile time. A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety.
 
 11. #### Why should the equals() and hashCode() methods often be overridden together?
