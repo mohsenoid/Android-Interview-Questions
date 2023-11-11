@@ -1,7 +1,7 @@
 # Android Interview Questions
-![Android Interview Questions](icon.png)
+![Android Interview - Java Questions](images/java.png)
 
-## Java Programming
+## Java Programming Questions
 1. #### What are the differences between a `SparseArray` and `Hashmap`?
    * Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (HashMap <Integer, V>).
    * is made to be memory efficient than using the regular HashMap

@@ -1,5 +1,5 @@
 # Android Interview Questions
-![Android Interview Questions](icon.png)
+![Android Interview - Kotlin Questions](images/kotlin.png)
 
 ## Kotlin programming
 

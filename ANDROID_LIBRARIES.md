@@ -1,5 +1,5 @@
 # Android Interview Questions
-![Android Interview Questions](icon.png)
+![Android Interview Questions](images/icon.png)
 
 ## Android Libraries
 

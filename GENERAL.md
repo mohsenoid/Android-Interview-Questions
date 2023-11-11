@@ -1,5 +1,5 @@
-# Android Interview Questions
-![Android Interview Questions](icon.png)
+# Android Interview
+![Android Interview - General Questions](images/general.png)
 
 ## General questions
 
@@ -51,3 +51,5 @@ Mostly recruiters or HR teams ask these questions to assess your soft skills and
 15. #### What is GitFlow? do you follow it?
 
 16. #### Describe Test-Driven Development (TDD).
+
+17. #### Like to work on Android app Backend (core) or UI (view)?

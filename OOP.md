@@ -1,5 +1,5 @@
 # Android Interview Questions
-![Android Interview Questions](icon.png)
+![Android Interview - OOP Questions](images/oop.png)
 
 ## Object Oriented Programming
 

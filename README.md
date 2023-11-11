@@ -1,14 +1,15 @@
 # Android Interview Questions
-![Android Interview Questions](icon.png)
+![Android Interview Questions](images/icon.png)
 
 This repository contains technical interview questions for Senior Android Developer positions that I have been asked or typically ask candidates. Contributions and improvements are welcome.
 
 ## Table of contents
-* [General questions](GENERAL.md)
-* [Object Oriented Programming](OOP.md)
-* [Java Programming](JAVA.md)
-* [Kotlin Programming](KOTLIN.md)
-* [Android Foundation](ANDROID_FOUNDATION.md)
+* [Preparations](PREPARATIONS.md)
+* [General Questions](GENERAL.md)
+* [Object Oriented Programming Questions](OOP.md)
+* [Java Programming Questions](JAVA.md)
+* [Kotlin Programming Questions](KOTLIN.md)
+* [Android Applications Fundamentals](ANDROID_FUNDAMENTALS.md)
 * [Android UI Design](ANDROID_UI.md)
 * [Android Libraries](ANDROID_LIBRARIES.md)
 * [Architecture Design](ARCHITECTURE_DESIGN.md)

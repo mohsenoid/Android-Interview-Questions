@@ -1,5 +1,5 @@
 # Android Interview Questions
-![Android Interview Questions](icon.png)
+![Android Interview Questions](images/icon.png)
 
 ## Android UI Design
 1. #### How we can present different styles/drawables for a button depending on the state of the button (pressed, selected, etc.) using XML?
