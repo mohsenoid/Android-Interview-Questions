@@ -111,38 +111,44 @@
 
 15. #### Why are Array and ArrayList different? When would you use each?
    * Resizable: Array is static in size that is fixed length data structure, One can not change the length after creating the Array object. ArrayList is dynamic in size.
-   * Multi-dimensional: Array can be multi dimensional , while ArrayList is always single dimensional.
+   * Multi-dimensional: Array can be multi dimensional , while ArrayList is always single-dimensional.
    * Primitives:  ArrayList can not contains primitive data types (like int , float , double) it can only contains Object while Array can contain both primitive data types as well as objects.
 
 16. #### What is a `ThreadPool`? Is it better than using several "simple" `Thread`s?
    * ThreadPool: represents a group of worker threads that are waiting for the job and reuse many times.
    * Using ThreadPool minimizes the overhead due to thread creation. Thread objects use a significant amount of memory, and in a large-scale application, allocating and deallocating many thread objects creates a significant memory management overhead.
 
-17. #### What are strong, soft and weak references in Java?
+17. #### What are strong, soft, and weak references in Java?
    * Strong Reference: is the default Reference Object of a type/class
    * Weak Reference: When an object in memory is reachable only by Weak Reference Objects, it becomes automatically eligible for GC.
-   * Soft Reference: Object is basically a weak Reference Object that remains in memory a bit more: normally, it resists GC cycle until memory is available and there is no risk of OutOfMemoryError
+   * Soft Reference: Object is basically a weak Reference Object that remains in memory a bit more: normally, it resists the GC cycle until memory is available and there is no risk of OutOfMemoryError
 
 18. #### What does the keyword synchronized mean?
-   * synchronized: is one of the tools that make your code thread safe.
+   * synchronized: is one of the tools that make your code thread-safe.
    * synchronized methods can't be called in the same time from multiple threads.
 
 19. #### What are `transient` and `volatile` modifiers?
    * transient: modifier tells the Java object serialization subsystem to exclude the field when serializing an instance of the class
    * volatile: modifier tells the JVM that writes to the field should always be synchronously flushed to memory, and that reads of the field should always read from memory.
 
-20. #### How to implement thread safe counter.
+20. #### How to implement thread-safe counter.
    * Use AtomicInteger.
 
 21. #### What are the states of Thread in Java?
    * New, Runnable, Blocked, Waiting, TimedWaiting, Terminated.
 
-22. #### How to make object thread safe without synchronisation?
-   * Make it immutable.
+22. #### How to make object thread-safe without synchronisation?
+   * **Immutable Objects**: If an object doesn’t have any mutable state, it’s inherently thread-safe. Once created, its state cannot change, so there’s no need for synchronization.
+   * **Thread-Local Storage**: Use ThreadLocal variables when you need to maintain state that is unique to a thread. This way, each thread has its own instance of a variable, and no synchronization is needed.
+   * **Concurrent Collections**: Utilize the concurrent collections from the java.util.concurrent package, such as ConcurrentHashMap, which are designed to handle concurrent access without explicit synchronization.
+   * **Atomic Variables**: Use atomic variables from the java.util.concurrent.atomic package, like AtomicInteger or AtomicReference, which provide methods that are thread-safe without synchronization.
+   * **Volatile Fields**: Declare fields as volatile to ensure that every thread sees the most recent write to the field. However, note that volatile only guarantees visibility, not atomicity.
+   * **Coroutines** (Kotlin Specific): In Kotlin, you can use coroutines with shared mutable state carefully, employing mechanisms like Mutex for mutual exclusion without traditional locking.
+   * **UI Thread** (Android Specific): For Android, use methods like Activity.runOnUiThread(Runnable) or View.post(Runnable) to perform actions on the UI thread safely.
 
 23. #### Explain how wait/notify mechanism works.
 
-24. #### Describe implementation of HashMap. What is collision? Difference between HashSet and TreeSet?
+24. #### Describe the implementation of HashMap. What is collision? Difference between HashSet and TreeSet?
 
 25. #### Whether static method can use nonstatic members?
 - NO
