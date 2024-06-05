@@ -10,17 +10,17 @@
 
 2. #### Have you tried Kotlin? Why should we use Kotlin?
 
-   - Kotlin is concise and boilerplate free (in comparison to Java)
+   - Kotlin is concise and boilerplate-free (in comparison to Java)
    - Kotlin is null-safe
    - Kotlin is interoperable
 
-3. #### What is the difference between the variable declaration with var and val?
+3. #### What is the difference between the variable declaration with **var** and **val**?
 
-   If you want to declare some mutable(changeable) variable, then you can use `var `. For the immutable variable, use `val `i.e. `val `variables can't be changed once assigned.
+   If you want to declare some mutable(changeable) variable, then you can use `var`. For the immutable variable, use `val `i.e. `val `variables can't be changed once assigned.
 
 4. #### What is the difference between the variable declaration with val and const?
 
-   Both the variables that are declared with `val `and `const `are immutable in nature. But the value of the `const `variable must be known at the compile-time whereas the value of the `val `variable can be assigned at runtime also.
+   Both the variables that are declared with `val `and `const `are immutable in nature. But the value of the `const `variable must be known at the compile-time whereas the value of the `val` variable can be assigned at runtime also.
 
 5. #### How to ensure null safety in Kotlin?
 
@@ -59,13 +59,13 @@
    println(name!!.length) // throws KotlinNullPointerException
    ```
 
-7. #### Do we have a ternary operator in Kotlin just like java?
+7. #### Do we have a ternary operator in Kotlin just like Java?
 
    No, we don't have a ternary operator in Kotlin but you can use the functionality of ternary operator by using if-else or Elvis operator.
 
 8. #### What is Elvis operator in Kotlin?
 
-   In Kotlin, you can assign `null` values to a variable by using the null safety property. To check if a value is having null value then you can use if-else or can use the Elvis operator i.e. `?: `For example:
+   In Kotlin, you can assign `null` values to a variable by using the null safety property. To check if a value is having null value then you can use if-else or can use the Elvis operator i.e. `?:` For example:
 
    ```kotlin
    var name:String? = "Some string"
@@ -83,7 +83,7 @@
    data class Employee(val name: String, val age: Int)
    ```
 
-   When we mark a class as a *data* class, you don’t have to implement or create the following functions like we do in Java: `hashCode() `, `equals() `, `toString() `, `copy() `. The compiler automatically creates these internally, so it also leads to clean code. Although, there are few other requirements that data classes need to fulfill.
+   When we mark a class as a *data* class, you don’t have to implement or create the following functions like we do in Java: `hashCode() `, `equals() `, `toString() `, `copy() `. The compiler automatically creates these internally, so it also leads to clean code. However, there are a few other requirements that data classes need to fulfill.
 
 10. #### What is the use of `@JvmStatic`, `@JvmOverloads`, and` @JvmFiled` annotations in Kotlin?
 
@@ -91,7 +91,7 @@
    - `@JvmOverloads`: To use the default values passed as an argument in Kotlin code from the Java code, we need to use the `@JvmOverloads `annotation.
    - `@JvmField`: To access the fields of a Kotlin class from Java code without using any getters and setters, we need to use the `@JvmField `in the Kotlin code.
 
-11. #### Can we use primitive types such as int, double, float in Kotlin?
+11. #### Can we use primitive types such as int, double, and float in Kotlin?
 
     In Kotlin, we can't use primitive types directly. We can use classes like Int, Double, etc. as an object wrapper for primitives. But the compiled bytecode has these primitive types.
 
@@ -199,7 +199,7 @@
 
     - Scopes in Kotlin Coroutines are very useful because we need to cancel the background task as soon as the activity is destroyed. Here, we will learn how to use scopes to handle these types of situations.
     - In Android-specific projects, we should go with the custom scopes created by considering the LifeCycle of Activity, ViewModel, etc.
-    - The scopes are present under the kotlin extension libraries. Make sure to add the required dependencies to your project.
+    - The scopes are present under the Kotlin extension libraries. Make sure to add the required dependencies to your project.
 
 29. #### How Exception Handling is done in Kotlin Coroutines?
 
@@ -353,7 +353,7 @@
 
 40. #### What are labels in Kotlin?
 
-    Any expression written in Kotlin is called a label. For example, if we are having a *for-loop* in our Kotlin code then we can name that *for-loop* expression as a label and will use the label name for the *for-loop* .
+    Any expression written in Kotlin is called a label. For example, if we have a *for-loop* in our Kotlin code then we can name that *for-loop* expression as a label and will use the label name for the *for-loop* .
 
     We can create a label by using an identifier followed by the `@ `sign. For example, `name@ `, `loop@ `, `xyz@ `, etc. The following is an example of a label:
 
@@ -368,6 +368,6 @@
 41. #### What are the benefits of using a Sealed Class over Enum?
 
     - Sealed Classes are also called power Enums
-    - Sealed classes give us the flexibility of having **different** **types of subclasses and also containing the state** . The important point to be noted here is the subclasses that are extending the Sealed classes should be either nested classes of the Sealed class or should be declared in the same file as that of the Sealed class.
+    - Sealed classes give us the flexibility of having **different** **types of subclasses and also containing the state**. The important point to be noted here is the subclasses that are extending the Sealed classes should be either nested classes of the Sealed class or should be declared in the same file as that of the Sealed class.
 
 42. #### What are collections in Kotlin?
