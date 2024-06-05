@@ -14,20 +14,20 @@ OOP serves as the basis of Android app development, and be prepared for intervie
 
 2. #### What are the access modifiers you know? What does each one do?
 
-   * `public` (by default in Kotlin): modifier is widely used on classes, variables, constructors, and methods to grant access from any class and method anywhere.
+   * `public` (by default in Kotlin): is widely used on classes, variables, constructors, and methods to grant access from any class and method anywhere.
    * `private` (by default in Java): variables, methods, constructors, or inner classes are only visible to its' containing class and its' methods.
    * `protected`: can be used on variables, methods, and constructors therefore allowing access only to subclasses and classes that are inside the same package as protected members' class.
    * `internal` (just Kotlin): means that any client inside this module who sees the declaring class sees its internal members.
 
 3. #### What is the difference between overriding and overloading a method in Java?
 
-   * Overload (one method with different signatures)
-   * @Override
+   * Overload: is one method with different signatures and input parameters
+   * @Override: occurs when a subclass (child class) has the same method or property as the parent class
 
-4. #### Can an Interface extend another Interface?
+4. #### Can an Interface/Class extend another/multiple Interfaces?
 
    * An interface can extend multiple interfaces.
-   * A single class can also implement multiple interfaces.
+   * A single class can implement multiple interfaces, but only one abstract class.
 
 5. #### What does the static word mean in Java?
 
@@ -41,7 +41,13 @@ OOP serves as the basis of Android app development, and be prepared for intervie
 
    * Constructors are not members of classes and only members are inherited.
 
-8. #### Which Design Patterns are you familiar with?
+8. #### What are the types of GoF ([Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns)) design patterns? Provide examples.
+
+   * Creational
+   * Structural
+   * Behavioral
+
+9. #### Which Design Patterns are you familiar with?
 
    * Creational patterns
      * Builder
@@ -56,49 +62,45 @@ OOP serves as the basis of Android app development, and be prepared for intervie
    * Behavioural patterns
      * Chain of responsibility
      * Iterator
+     * Observer
      * Strategy
+   * More to read: https://refactoring.guru/design-patterns
 
-9. #### Which design patterns are used in Android?
+10. #### Which design patterns are used in Android?
 
    * `View Holder` uses Singleton
-   * `Intent` uses Factory
+   * `Intent` or `Toast.makeText()` uses Factory
    * `Broadcast Receiver` uses Observer
    * `View` uses Composite
    * Media FrameWork uses Façade
-   * `Toast.makeText()` uses Factory
+   * `Adapter` uses adapter
 
-10. #### What is the difference between Composition and Inheritance? How we should decide which one to use?
+11. #### What is the difference between Composition and Inheritance? How should we decide which one to use?
 
-   * Using **is** vs **has** rule (Cat is an Animal / Person has a Job)
+   * **Composition** is a design principle where a class is composed of one or more objects of other classes, signifying a “has-a” relationship
+   * **Inheritance** is a mechanism where a class extends another class, representing an “is-a” relationship
+   * Using the **is-a** vs **has-a** rule, we can determine which one to use. For example: a cat is an animal, but a person has a job.
 
-11. #### Do you know SOLID (object-oriented design)?
+12. #### Do you know SOLID software programming design principles?
 
-   * **S**ingle responsibility principle:
+   * **S**ingle Responsibility Principle:
      * A class should have only a single responsibility (i.e. only one potential change in the software’s specification should be able to affect the specification of the class
-     * a class should have only one single responsibility
-     * One chef cannot run the whole restaurant
-   * **O**pen/closed principle:
-     * A software module/class/method should be open for extension but closed for modification.
-     * any software entity should be open for extension but closed for modification.
-     * Trying new shoes doesn’t require you to cut your feet off with a saw.
-   * **L**iskov substitution principle:
+     * One chef cannot run the whole restaurant!
+   * **O**pen / Closed Principle:
+     * Any software entity (module/class/method) should be open for extension but closed for modification.
+     * Trying new shoes doesn’t require you to saw your feet off!
+   * **L**iskov Substitution Principle:
      * Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
-   * **I**nterface segregation principle:
+   * **I**nterface Segregation Principle:
      * Clients should not be forced to depend upon the interfaces that they do not use.
-     * many client-specific interfaces are better than one general-purpose interface.
-   * **D**ependency inversion principle:
-     * Program to an interface, not to an implementation.
+     * Many client-specific interfaces are better than one general-purpose interface.
+   * **D**ependency Inversion Principle:
      * The high-level module must not depend on the low-level module, but they should depend on abstractions. One should “Depend upon Abstractions. Do not depend upon concretions.
-     * You wouldn’t wire a lamp directly to your house.
+     * Program to an interface, not to an implementation.
+     * You wouldn’t wire a lamp directly to your house!
 
-12. #### Why do we use the builder design pattern? How did Kotlin improve this use case?
+13. #### Why do we use the builder design pattern? How did Kotlin improve this use case?
 
-   * to avoid multiple implementations of the constructor for setting different fields in a class.
+   * To avoid the constructor's multiple implementations for setting different fields in a class having many properties.
 
-13. #### What is the difference between Abstract Class and Interface?
-
-14. #### What are the types of GoF ([Gang of Four](https://en.wikipedia.org/wiki/Design_Patterns)) design patterns? Provide examples.
-
-   * Creational
-   * Structural
-   * Behavioral.
+14. #### What is the difference between Abstract Class and Interface?
