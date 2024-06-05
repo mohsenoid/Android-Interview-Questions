@@ -4,14 +4,14 @@
 ## Java Programming Questions
 1. #### Why is Java said to be platform-independent?
 
-   - WORA: “write once, run anywhere”.
-   - The execution of the code does not depend upon the OS.
+   - **WORA**: “write once, run anywhere”.
+   - Java code compiles into _bytecode_ that can run on any device equipped with a _Java Virtual Machine (JVM)_ independent from the OS.
 
-2. #### What are the differences between a `SparseArray` and `Hashmap`?
+2. #### What are the differences between the Android `SparseArray` and Java `Hashmap`?
 
-   * Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (HashMap <Integer, V>).
-   * is made to be memory efficient than using the regular HashMap
-   * It is generally slower than a traditional HashMap
+   * Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (similar to HashMap <Integer, V>).
+   * It Is made to be more memory efficient than using the regular HashMap.
+   * It is generally slower than a traditional HashMap.
 
 3. #### What are the differences between a `LinkedList` vs `ArrayList`?
    * two different implementations of the List interface
