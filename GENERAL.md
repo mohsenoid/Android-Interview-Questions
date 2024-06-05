@@ -13,7 +13,7 @@ Most recruiters or HR teams ask these questions to assess your soft skills and e
 
 4. #### What was the most challenging thing you have done in an application?
 
-5. #### Which websites and blogs do you use as Android references?
+5. #### Which websites, blogs, or channels do you use as Android references to stay updated?
 
    * [developer.android](https://developer.android.com/)
    * [StackOverflow](https://stackoverflow.com/questions/tagged/android)
@@ -24,32 +24,31 @@ Most recruiters or HR teams ask these questions to assess your soft skills and e
    * [Droidcon.com](https://www.droidcon.com/)
    * [KotlinConf.com](https://kotlinconf.com/)
 
-6. #### Why do you consider yourself a Senior Developer? Who is a senior developer? What is the definition of being a Senior Developer?
-
-   * Being senior is mostly about sharing, your knowledge, experience, time, ...
+6. #### Why do you consider yourself a Senior/Junior Developer? Who is a Senior/Junior developer? What is the definition of being a Senior Developer?
 
 7. #### Do you do any Documentation?
 
 8. #### What is your most proud Android development?
 
-9. #### What’s your weakness and power in Android development?
+9. #### What are your weaknesses (areas for improvement) and strengths in Android development?
 
 10. #### What project management tools have you used before?
 
    * Jira
-   * asana
+   * Asana
    * Trello
+   * etc.
 
-11. #### Are you familiar with Agile, SCRUM, Sprint,...?
+11. #### Are you familiar with Agile, SCRUM, Sprint, ...?
 
 12. #### What are the aspects of your job that you enjoy?
 
 13. #### What type of team you like to work in?
 
-14. #### Teach me something!?
+14. #### What is GitFlow? do you follow it?
 
-15. #### What is GitFlow? do you follow it?
+15. #### Describe Test-Driven Development (TDD).
 
-16. #### Describe Test-Driven Development (TDD).
+16. #### Do you like to work on the Android app Backend (core) or UI (view)?
 
-17. #### Like to work on the Android app Backend (core) or UI (view)?
+17. #### Teach me as a non-technical person something technical!?
