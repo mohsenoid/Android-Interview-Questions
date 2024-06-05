@@ -20,11 +20,11 @@
 
 4. #### What is the difference between the variable declaration with val and const?
 
-   Both the variables that are declared with `val `and `const `are immutable in nature. But the value of the `const `variable must be known at the compile-time whereas the value of the `val` variable can be assigned at runtime also.
+   Both the variables that are declared with `val` and `const` are immutable in nature. But the value of the `const` variable must be known at the compile-time whereas the value of the `val` variable can be assigned at runtime also.
 
 5. #### How to ensure null safety in Kotlin?
 
-   One of the major advantages of using Kotlin is null safety. In Java, if you access some null variable then you will get a `NullPointerException `. So, the following code in Kotlin will produce a compile-time error:
+   One of the major advantages of using Kotlin is null safety. In Java, if you access some null variable then you will get a `NullPointerException`. So, the following code in Kotlin will produce a compile-time error:
 
    ```kotlin
    var name: String = "Some string"
