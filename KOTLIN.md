@@ -16,7 +16,7 @@
 
 3. #### What is the difference between the variable declaration with **var** and **val**?
 
-   If you want to declare some mutable(changeable) variable, then you can use `var`. For the immutable variable, use `val `i.e. `val `variables can't be changed once assigned.
+   If you want to declare some mutable(changeable) variable, then you can use `var`. For the immutable variable, use `val` i.e. `val` variables can't be changed once assigned.
 
 4. #### What is the difference between the variable declaration with val and const?
 
