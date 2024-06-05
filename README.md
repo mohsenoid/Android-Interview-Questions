@@ -15,7 +15,7 @@ I want you to know that contributions and improvements are welcome.
 * [Android UI Design Quesions](ANDROID_UI.md)
 * [Android Libraries Quesions](ANDROID_LIBRARIES.md)
 * [Architecture Design Quesions](ARCHITECTURE_DESIGN.md)
-* [Testing Quesions](TESTS.md)
+* [Tests Quesions](TESTS.md)
 
 ## References
 
