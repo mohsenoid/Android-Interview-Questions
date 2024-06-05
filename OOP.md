@@ -86,18 +86,33 @@ OOP serves as the basis of Android app development, and be prepared for intervie
    * **S**ingle Responsibility Principle:
      * A class should have only a single responsibility (i.e. only one potential change in the software’s specification should be able to affect the specification of the class
      * One chef cannot run the whole restaurant!
+
+<img src="assets\SOLID\S.jpg" alt="Single Responsibility Principle" style="width:400px;" />
+
    * **O**pen / Closed Principle:
+     
      * Any software entity (module/class/method) should be open for extension but closed for modification.
      * Trying new shoes doesn’t require you to saw your feet off!
+
+<img src="assets\SOLID\O.jpg" alt="Open / Closed Principle" style="width:400px;" />
+
    * **L**iskov Substitution Principle:
      * Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
+
+<img src="assets\SOLID\L.jpg" alt="Liskov Substitution Principle" style="width:400px;" />
+
    * **I**nterface Segregation Principle:
      * Clients should not be forced to depend upon the interfaces that they do not use.
      * Many client-specific interfaces are better than one general-purpose interface.
+
+<img src="assets\SOLID\I.jpg" alt="Interface Segregation Principle" style="width:400px;" />
+
    * **D**ependency Inversion Principle:
      * The high-level module must not depend on the low-level module, but they should depend on abstractions. One should “Depend upon Abstractions. Do not depend upon concretions.
      * Program to an interface, not to an implementation.
      * You wouldn’t wire a lamp directly to your house!
+
+<img src="assets\SOLID\D.jpg" alt="Dependency Inversion Principle" style="width:400px;" />
 
 13. #### Why do we use the builder design pattern? How did Kotlin improve this use case?
 
