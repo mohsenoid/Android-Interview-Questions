@@ -10,7 +10,7 @@
 
 2. #### Have you tried Kotlin? Why should we use Kotlin?
 
-   - Kotlin is concise
+   - Kotlin is concise and boilerplate free (in comparison to Java)
    - Kotlin is null-safe
    - Kotlin is interoperable
 
