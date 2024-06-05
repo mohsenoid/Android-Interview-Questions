@@ -17,6 +17,7 @@ OOP serves as the basis of Android app development, and be prepared for intervie
    * `public` (by default in Kotlin): modifier is widely used on classes, variables, constructors, and methods to grant access from any class and method anywhere.
    * `private` (by default in Java): variables, methods, constructors, or inner classes are only visible to its' containing class and its' methods.
    * `protected`: can be used on variables, methods, and constructors therefore allowing access only to subclasses and classes that are inside the same package as protected members' class.
+   * `internal` (just Kotlin): means that any client inside this module who sees the declaring class sees its internal members.
 
 3. #### What is the difference between overriding and overloading a method in Java?
 
