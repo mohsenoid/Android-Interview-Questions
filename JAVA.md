@@ -2,9 +2,10 @@
 ![Android Interview - Java Questions](images/java.png)
 
 ## Java Programming Questions
-1. #### Why is Java said to be platform independent?
+1. #### Why is Java said to be platform-independent?
 
-   - The execution of the code does not depend upon the OS
+   - WORA: “write once, run anywhere”.
+   - The execution of the code does not depend upon the OS.
 
 2. #### What are the differences between a `SparseArray` and `Hashmap`?
 
@@ -19,11 +20,11 @@
    * LinkedList is better for working with stacks mostly, or when working with buffers.
    * ArrayList is best for working with indexes.
 
-4. #### What is the difference between HashSet, HashMap and Hashtable? How do they behave in a multi-threaded environment?
+4. #### What is the difference between HashSet, HashMap, and Hashtable? How do they behave in a multi-threaded environment?
 
    - ##### Hashtable
 
-   Hashtable is basically a data structure to retain values of key-value pair.
+   Hashtable is a data structure to retain values of key-value pairs.
 
    - It does not allow null for both key and value. It will throw NullPointerException.
    - Hashtable does not maintain insertion order. The order is defined by the Hash function. So only use this if you do not need data in order.
@@ -45,7 +46,7 @@
 
    - ##### HashMap
 
-     Like Hashtable it also accepts key value pair.
+     Like Hashtable it also accepts key-value pairs.
 
      - It allows null for both key and value.
      - HashMap does not maintain insertion order. The order is defined by the Hash function.
