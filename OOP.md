@@ -1,9 +1,9 @@
 # Android Interview
 ![Android Interview - OOP Questions](images/oop.png)
 
-## Object Oriented Programming
+## Object-Oriented Programming
 
-OOP forms the foundation of Android app development and interviewers may assess your knowledge in this area.
+OOP serves as the basis of Android app development, and be prepared for interviewers to evaluate your expertise in this area.
 
 1. #### Name some of the characteristics of OOP languages
 
@@ -14,19 +14,19 @@ OOP forms the foundation of Android app development and interviewers may assess 
 
 2. #### What are the access modifiers you know? What does each one do?
 
-   * `public`: modifier is widely-used on classes, variables, constructors and methods to grant access from any class and method anywhere.
-   * `private` (by default) : variables, methods, constructors or inner classes are only visible to its' containing class and its' methods.
-   * `protected`: can be used on variables, methods and constructors therefore allowing access only to subclasses and classes that are inside the same package as protected members' class.
+   * `public`: modifier is widely used on classes, variables, constructors, and methods to grant access from any class and method anywhere.
+   * `private` (by default): variables, methods, constructors, or inner classes are only visible to its' containing class and its' methods.
+   * `protected`: can be used on variables, methods, and constructors therefore allowing access only to subclasses and classes that are inside the same package as protected members' class.
 
 3. #### What is the difference between overriding and overloading a method in Java?
 
-   * Overload (one method with different signature)
+   * Overload (one method with different signatures)
    * @Override
 
 4. #### Can an Interface extend another Interface?
 
-   * An interface can extends multiple interfaces.
-   * A single class can also implement multiple interface.
+   * An interface can extend multiple interfaces.
+   * A single class can also implement multiple interfaces.
 
 5. #### What does the static word mean in Java?
 
@@ -40,7 +40,7 @@ OOP forms the foundation of Android app development and interviewers may assess 
 
    * Constructors are not members of classes and only members are inherited.
 
-8. #### Which Design Patterns you are familiar with?
+8. #### Which Design Patterns are you familiar with?
 
    * Creational patterns
      * Builder
@@ -79,7 +79,7 @@ OOP forms the foundation of Android app development and interviewers may assess 
    * **O**pen/closed principle:
      * A software module/class/method should be open for extension but closed for modification.
      * any software entity should be open for extension but closed for modification.
-     * Trying new shoes doesn’t require you to saw your feet off.
+     * Trying new shoes doesn’t require you to cut your feet off with a saw.
    * **L**iskov substitution principle:
      * Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
    * **I**nterface segregation principle:
@@ -87,10 +87,10 @@ OOP forms the foundation of Android app development and interviewers may assess 
      * many client-specific interfaces are better than one general-purpose interface.
    * **D**ependency inversion principle:
      * Program to an interface, not to an implementation.
-     * The high-level module must not depend on the low-level module, but they should depend on abstractions. one should “Depend upon Abstractions. Do not depend upon concretions.
+     * The high-level module must not depend on the low-level module, but they should depend on abstractions. One should “Depend upon Abstractions. Do not depend upon concretions.
      * You wouldn’t wire a lamp directly to your house.
 
-12. #### Why we use the builder design pattern? How Kotlin improves this use case?
+12. #### Why do we use the builder design pattern? How did Kotlin improve this use case?
 
    * to avoid multiple implementations of the constructor for setting different fields in a class.
 
