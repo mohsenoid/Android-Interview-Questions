@@ -424,3 +424,28 @@
     - Sealed classes give us the flexibility of having **different** **types of subclasses and also containing the state**. The important point to be noted here is the subclasses that are extending the Sealed classes should be either nested classes of the Sealed class or should be declared in the same file as that of the Sealed class.
 
 43. #### What are collections in Kotlin?
+
+   In Kotlin, collections are a fundamental concept that allows you to store and manipulate groups of objects. They are similar to collections in other programming languages like Java or Python. Here’s a brief overview:
+
+   - **Lists**: Ordered collections that can contain duplicate elements. They allow access to elements by indices.
+
+      ```Kotlin
+      val numbers = listOf(1, 2, 3, 4)
+      println(numbers[2]) // Output: 3
+      ```
+      
+   - **Sets**: Unordered collections that only contain unique elements. They do not allow duplicates.
+
+      ```Kotlin
+      val fruits = setOf("apple", "banana", "kiwi")
+      println(fruits.size) // Output: 3
+      ```
+
+   - **Maps**: Collections of key-value pairs where each key is unique. Maps are useful for storing logical connections between objects.
+
+      ```Kotlin
+      val capitals = mapOf("Germany" to "Berlin", "France" to "Paris")
+      println(capitals["Germany"]) // Output: Berlin
+      ```
+
+   Kotlin provides both mutable and immutable versions of these collections. Immutable collections are read-only, while mutable collections allow for modification such as adding, removing, and updating elements. The collection interfaces and related functions are located in the `kotlin.collections` package.
