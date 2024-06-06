@@ -122,10 +122,30 @@ From basic to advanced concepts, these Android questions will test your fundamen
         - Additional threads can be created for background work.
         - Threads within the same process share the same memory space
 
-15. #### What is the difference between a process and a task?
+14. #### What is the difference between a process and a task?
 
     - A **process** is about the execution and management of resources at the system level.
     - A **task** is about the user’s journey through a sequence of activities within or across applications.
+
+15. #### What is an Adapter?
+   * The adapter is an interface whose implementations provide data and the display of that data done by the ListView/RecyclerView.
+   * ListViews and RecyclerView do not actually contain any data themselves. They are just a UI without data in it.
+
+16. #### Have you used Android annotations (e.g. IntegerRes, IntDef, ...)?
+
+17. #### What is a Fragment?
+
+18. #### Do you have any experience with NDK?
+
+19. #### Do you have any experience with Bluetooth and BLE Android API?
+
+20. #### What are the ways we can store information in an Android app?
+
+21. #### Why should you avoid to run non-UI code on the main thread?
+
+22. #### What do you use `SharedPreferences`/`database` for? Why? Do you encrypt anything you store? How?
+
+23. #### What is memory leak. How to test app for memory leaks.
 
 ---
 
@@ -143,21 +163,22 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
    ![Two Android Activity Config Change Lifecycle](images/two_activity_lifecycle_config_change.png)
 
-4. #### `onSavedInstanceState()` and `onRestoreInstanceState()` in activity?**
+4. #### We have 3 Activities (A, B, and C which is transparent) explain what is the sequence of lifecycle methods execution if we 1) go from A to B, 2) then B to C, 3) Rotate the phone, 4) press back to B, 5) press back to A!!?
+ 
+5. #### `onSavedInstanceState()` and `onRestoreInstanceState()` in activity?**
 
    - `onSaveInstanceState()` - a callback method that is used to store data before stopping the activity.
    - `OnRestoreInstanceState()` - When an activity is recreated after it was previously destroyed, we can recover the saved state from the Bundle that the system passes to the activity. Both the `onCreate()` and `onRestoreInstanceState()` callback methods receive the same Bundle that contains the instance state information. But because the `onCreate()` method is called whether the system is creating a new instance of your activity or recreating a previous one, you must check whether the state Bundle is `null` before you attempt to read it. If it is null, then the system is creating a new instance of the activity, instead of restoring a previous one that was destroyed.
 
-5. #### How does the activity respond when the user rotates the screen?
+6. #### How does the activity respond when the user rotates the screen?
 
    - When the screen is rotated, the current instance of the activity is destroyed a new instance of the Activity is created in the new orientation. The `onRestart()` method is invoked first when a screen is rotated. The other lifecycle methods get invoked in the same flow as they were when the activity was first created.
 
-
-6. #### How can we transfer objects between activities?
+7. #### How can we transfer objects between activities?
 
    * Parcelable which is better for Android apps than Serializable which uses reflection
 
-7. #### What’s the difference between commit() and apply() in SharedPreferences?
+8. #### What’s the difference between commit() and apply() in SharedPreferences?
 
    - `commit()`: writes the data synchronously and returns a boolean value of success or failure depending on the result immediately.
    - `apply()`: is asynchronous and it won’t return any boolean response. Also if there is an apply() outstanding and we perform another commit(). The commit() will be blocked until the apply() is not completed.
@@ -243,6 +264,10 @@ From basic to advanced concepts, these Android questions will test your fundamen
    * **sticky intent**: Sticks with Android, for future broadcast listeners
    * **pending intent**: Will be used when someone wants to fire an intent in the future and maybe at that time the app is not alive anymore.
 
+4. #### What is the size of the Bundle in Android? What can happen if a large amount of data is passed inside Intents?
+   * ~500kb
+   * TransactionTooLargeException may be thrown by the system.
+
 ---
 
 
@@ -260,28 +285,3 @@ From basic to advanced concepts, these Android questions will test your fundamen
    * They encapsulate data and provide it to applications through the single ContentResolver interface.
    * Used for providing the content between applications
    * A content provider is only required if you need to share data between multiple applications.
-
-21. #### What is an Adapter?
-   * The adapter is an interface whose implementations provide data and the display of that data done by the ListView/RecyclerView.
-   * ListViews and RecyclerView do not actually contain any data themselves. They are just a UI without data in it.
-
-23. #### Have you used Android annotations (e.g. IntegerRes, IntDef, ...)?
-
-26. #### We have 3 Activities (A, B, and C which is transparent) explain what is the sequence of lifecycle methods execution if we 1) go from A to B, 2) then B to C, 3) Rotate the phone, 4) press back to B, 5) press back to A!!?
-
-27. #### What is a Fragment?
-
-28. #### Do you have any experience with NDK?
-
-29. #### Do you have any experience with Bluetooth and BLE Android API?
-
-30. #### What are the ways we can store information in an Android app?
-
-31. #### Why should you avoid to run non-UI code on the main thread?
-
-32. #### What do you use `SharedPreferences`/`database` for? Why? Do you encrypt anything you store? How?
-
-33. #### What is the size of the Bundle in Android. What can happen if pass large amount of data inside Intents?
-   * ~500kb
-   * TransactionTooLargeException may be thrown by the system.
-34. #### What is memory leak. How to test app for memory leaks.
