@@ -159,7 +159,7 @@
 21. #### What is the difference between List and Array types in Kotlin?
 
     - **Data Structure**: An Array in Kotlin is a class representing a fixed-size collection of elements that can be accessed by their indices. It’s compiled into a JVM array, which is a sequential fixed-size memory region1. A List, on the other hand, is an interface that can have various implementations like ArrayList or LinkedList, each with its own memory representation and operational logic1.
-    - **Mutability**: Arrays are inherently mutable, meaning you can modify their elements. However, their size is fixed once initialized. Lists come in two flavors: List (immutable) and MutableList (mutable). The List interface provides read-only operations, while MutableList allows for adding, removing, and updating its elements12.
+    - **Mutability**: Arrays are inherently mutable, meaning you can modify their elements. However, their size is fixed once initialized. Lists come in two flavors: List (immutable) and MutableList (mutable). The List interface provides read-only operations, while MutableList allows for adding, removing, and updating its elements.
     - **Generic Variance**: Arrays are invariant, meaning an Array<Int> is not assignable to an Array<Number>. In contrast, List is covariant, so a List<Int> can be treated as a List<Number>1.
     - **Primitive Types Optimization**: Kotlin provides specialized classes for arrays of primitive types like IntArray, DoubleArray, etc., which avoid boxing overhead and are mapped to Java’s primitive arrays. Lists do not have such specialized implementations for primitives1.
 
@@ -237,7 +237,7 @@
 
 32. #### What are Higher-Order functions in Kotlin?
 
-    A higher-order function is a function that takes functions as parameters or returns a function. For example, A function can take functions as parameters.
+    Higher-order functions in Kotlin are functions that can accept other functions as parameters or return a function. They are a fundamental part of Kotlin’s support for functional programming and allow for more abstract and flexible code.
 
     ```kotlin
     fun passMeFunction(abc: () -> Unit) {
@@ -256,7 +256,7 @@
     }
     ```
 
-    And, we have a function **returnMeAddFunction** which takes zero parameters and returns a function of the type **((Int, Int) -> Int)** .
+    and, we have a function **returnMeAddFunction** which takes zero parameters and returns a function of the type **((Int, Int) -> Int)**.
 
     ```kotlin
     fun returnMeAddFunction(): ((Int, Int) -> Int) {
@@ -266,7 +266,7 @@
     }
     ```
 
-    And to call the above function, we can do:
+    and, to call the above function, we can do:
 
     ```kotlin
     val add = returnMeAddFunction()
@@ -313,11 +313,11 @@
 
 35. #### What is an inline function in Kotlin?
 
-    Inline function instruct compiler to insert complete body of the function wherever that function got used in the code. To use an Inline function, all you need to do is just add an inline keyword at the beginning of the function declaration.
+    The inline function instructs the compiler to insert the complete body of the function wherever that function is used in the code. To use an Inline function, all you need to do is adding an inline keyword at the beginning of the function declaration.
 
 36. #### What is noinline in Kotlin?
 
-    While using an inline function and want to pass some lambda function and not all lambda function as inline, then you can explicitly tell the compiler which lambda it shouldn't inline.
+    While using an inline function and want to pass some lambda functions and not all lambda functions as inline, then you can explicitly tell the compiler which lambda it shouldn't inline.
 
     ```java
     inline fun doSomethingElse(abc: () -> Unit, noinline xyz: () -> Unit) {
@@ -328,7 +328,11 @@
 
 37. #### What are Reified types in Kotlin?
 
-    When you are using the concept of Generics to pass some class as a parameter to some function and you need to access the type of that class, then you need to use the reified keyword in Kotlin.
+    Reified types in Kotlin address a limitation of generics known as type erasure. Here’s what they are and how they work:
+
+    - **Type Erasure**: In Kotlin, just like in Java, generic type information is erased at runtime due to type erasure. This means that the specific type parameter of a generic class or function is not available at runtime.
+    - **Inline Functions**: Kotlin introduces the inline keyword, which allows the body of a function to be inlined at the call site. This means that the function’s bytecode is copied to the place where the function is called, rather than being called through a normal method call.
+    - **Reified Keyword**: When you mark a type parameter of an inline function as reified, it preserves the type information at runtime. This allows you to perform operations that are not possible with non-reified generics, such as type checks or obtaining the class of the type parameter.
 
     For example:
 
