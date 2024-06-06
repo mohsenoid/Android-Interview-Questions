@@ -20,4 +20,6 @@
 
 6. #### What is Robolectric?
 
-7. #### Why we use Mockito?
+7. #### Why we use Mockito/MockK?
+
+8. #### Whqt is test pyramid?
