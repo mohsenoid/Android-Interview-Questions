@@ -13,10 +13,31 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
 3. #### What is ANR (Application not responding)?
 
-4. #### What is Android Runtime (ART) and Dalvik?
-   * Android runtime (ART) is the managed runtime used by applications and some system services on Android.
-   * Dalvik is the predecessor of ART
-   * ART as the runtime executes the Dalvik Executable format and Dex bytecode specification.
+4. #### What are Android Runtime (ART) and Dalvik?
+
+    Android Runtime (ART) and Dalvik are both execution environments for running Android applications, but they have some key differences:
+  
+    - **Dalvik**: It was the default runtime environment used by Android devices up until version 4.4 KitKat. Dalvik utilizes a Just-In-Time (JIT) compiler, which means it compiles the code at runtime, as needed. This approach is efficient in terms of memory usage because only the parts of the code that are needed are compiled.
+    - **ART**: Introduced as an experimental feature in KitKat and later becoming the default runtime in Android 5.0 Lollipop, ART uses an Ahead-Of-Time (AOT) compiler. With AOT, the entire application code is compiled during installation, which improves app performance, especially startup times, because the code is already compiled to native instructions that the device’s CPU can execute directly.
+  
+    Here are some of the features and differences between ART and Dalvik:
+  
+    - **Compilation Approach**:
+      - **Dalvik** compiles only the necessary parts of the code at runtime (JIT).
+      - **ART** compiles the entire application code at install time (AOT).
+  
+    - **Performance**:
+      - **Dalvik** may experience lag during execution as it compiles code on the fly.
+      - **ART** provides faster execution of applications due to pre-compilation.
+  
+    - **Storage and Booting Time**:
+      - **Dalvik** has a smaller memory footprint and boots faster compared to ART.
+      - **ART** requires more storage space because it compiles the entire code during installation.
+  
+    - **Battery Performance and Garbage Collection**:
+      - **ART** improves battery performance and has better garbage collection capabilities, leading to improved memory management
+     
+    Both ART and Dalvik are compatible with running DEX (Dalvik Executable) bytecode, which is the format Android apps are compiled into. This means apps developed for Dalvik should generally work when running with ART, although some techniques that work on Dalvik do not work on ART.
 
 5. #### What is Context? What is the difference between Application Context and Activity Context?
 
