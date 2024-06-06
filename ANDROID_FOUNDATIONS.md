@@ -9,6 +9,7 @@ From basic to advanced concepts, these Android questions will test your fundamen
 - [Activity](#Activity)
 - [Fragment](#Fragment)
 - [Service](#Service)
+- [Intent](#Intent)
 - [ContentProvider](#ContentProvider)
 
 ### General
@@ -191,19 +192,22 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
 ---
 
+
 ### Service
 
-1. #### What is the difference between `Service` & `IntentService`?
-   * IntentService is used for short tasks and a Service is for long ones
-   * IntentService runs in the App process but Service can run in a separate process.
-
-2. #### What is a Service?
+1. #### What is a Service?
    * A Service is an application component that can perform long-running operations in the background and does not provide a user interface.
    * a component can bind to a service to interact with it and even perform interprocess communication (IPC) if it is running in a separate process
+
+2. #### What is the difference between `Service` & `IntentService`?
+   * **IntentService** is used for short tasks and a **Service** is for long ones
+   * **IntentService** runs in the App process but **Service** can(!) run in a separate process.
 
 3. #### How can Activity communicate with services?
    * Binding services
    * Using Callbacks interfaces
+
+---
 
 
 ## Intent
