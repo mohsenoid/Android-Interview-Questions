@@ -158,7 +158,10 @@
 
 21. #### What is the difference between List and Array types in Kotlin?
 
-    If you have a list of data that is having a fixed size, then you can use an Array. But if the size of the list can vary, then we have to use a mutable list.
+    - **Data Structure**: An Array in Kotlin is a class representing a fixed-size collection of elements that can be accessed by their indices. It’s compiled into a JVM array, which is a sequential fixed-size memory region1. A List, on the other hand, is an interface that can have various implementations like ArrayList or LinkedList, each with its own memory representation and operational logic1.
+    - **Mutability**: Arrays are inherently mutable, meaning you can modify their elements. However, their size is fixed once initialized. Lists come in two flavors: List (immutable) and MutableList (mutable). The List interface provides read-only operations, while MutableList allows for adding, removing, and updating its elements12.
+    - **Generic Variance**: Arrays are invariant, meaning an Array<Int> is not assignable to an Array<Number>. In contrast, List is covariant, so a List<Int> can be treated as a List<Number>1.
+    - **Primitive Types Optimization**: Kotlin provides specialized classes for arrays of primitive types like IntArray, DoubleArray, etc., which avoid boxing overhead and are mapped to Java’s primitive arrays. Lists do not have such specialized implementations for primitives1.
 
 22. #### What are visibility modifiers in Kotlin?
 
