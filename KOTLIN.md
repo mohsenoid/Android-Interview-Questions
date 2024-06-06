@@ -200,7 +200,7 @@
 
 28. #### What are scopes in Kotlin Coroutines?
 
-    - Scopes in Kotlin Coroutines are very useful because we need to cancel the background task as soon as the activity is destroyed. Here, we will learn how to use scopes to handle these types of situations.
+    - Scopes in Kotlin Coroutines are very useful because we need to cancel the background task as soon as the activity is destroyed.
     - In Android-specific projects, we should go with the custom scopes created by considering the LifeCycle of Activity, ViewModel, etc.
     - The scopes are present under the Kotlin extension libraries. Make sure to add the required dependencies to your project.
 
