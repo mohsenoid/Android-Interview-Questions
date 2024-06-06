@@ -348,8 +348,49 @@
     ```
 
 38. #### Explain the use-case of let, run, with, also, apply in Kotlin.
+   In Kotlin, let, run, with, also, and apply are known as scope functions. They are used to execute a block of code within the context of an object. These functions are particularly useful for keeping the code concise and maintaining a clean scope when working with objects. They help to avoid excessive use of temporary variables and provide a structured way to manipulate objects.
 
-39. #### What are pair and triple in Kotlin?
+   - `let`: It is used for executing a block of code with the object as its parameter. It’s often used for null checks and to avoid `NullPointerExceptions`. It returns the result of the lambda expression.
+
+   ```kotlin
+   val result = "Hello".let {
+       println(it) // Prints "Hello"
+       it.length   // Returns the length of the string
+   }
+   ```
+   - `run`: Similar to let, but within its block, the object is referred to as `this`. It’s useful when you want to call multiple methods on an object or perform operations on it.
+
+   ```Kotlin
+   val result = "Hello".run {
+       println(this) // Prints "Hello"
+       length        // Returns the length of the string
+   }
+   ```
+   - `with`: It’s a non-extension function that takes the context object as an argument. It’s useful when you’re calling multiple methods on the same object.
+   ```Kotlin
+   val numbers = mutableListOf("one", "two", "three")
+   with(numbers) {
+       println("The list elements are: $this")
+       println("The size of the list is: ${size}")
+   }
+   ```
+   - `also`: It’s used when you want to perform additional operations on an object while keeping the object unmodified. It returns the original object.
+   ```Kotlin
+   val numbers = mutableListOf("one", "two", "three")
+   numbers.also {
+       println("The list elements are: $it")
+   }.add("four")
+   ```
+   - `apply`: This function is used to configure an object. The object is available as `this` inside the block. It returns the object itself after the configuration is done.
+
+   ```Kotlin
+   val person = Person().apply {
+       name = "John Doe"
+       age = 25
+   }
+   ```
+
+40. #### What are pair and triple in Kotlin?
 
     Pair and Triples are used to return two and three values respectively from a function and the returned values can be of the same data type or different.
 
@@ -358,7 +399,7 @@
     print(pair.first + pair.second)
     ```
 
-40. #### What are labels in Kotlin?
+41. #### What are labels in Kotlin?
 
     Any expression written in Kotlin is called a label. For example, if we have a *for-loop* in our Kotlin code then we can name that *for-loop* expression as a label and will use the label name for the *for-loop* .
 
@@ -372,9 +413,9 @@
 
     The name of the above for-loop is `loop `
 
-41. #### What are the benefits of using a Sealed Class over Enum?
+42. #### What are the benefits of using a Sealed Class over Enum?
 
     - Sealed Classes are also called power Enums
     - Sealed classes give us the flexibility of having **different** **types of subclasses and also containing the state**. The important point to be noted here is the subclasses that are extending the Sealed classes should be either nested classes of the Sealed class or should be declared in the same file as that of the Sealed class.
 
-42. #### What are collections in Kotlin?
+43. #### What are collections in Kotlin?
