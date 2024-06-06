@@ -10,6 +10,7 @@ From basic to advanced concepts, these Android questions will test your fundamen
 - [Fragment](#Fragment)
 - [Service](#Service)
 - [Intent](#Intent)
+- [BroadcastReceiver](#BroadcastReceiver)
 - [ContentProvider](#ContentProvider)
 
 ### General
@@ -210,33 +211,42 @@ From basic to advanced concepts, these Android questions will test your fundamen
 ---
 
 
-## Intent
+### Intent
 
-1. #### What is the Intent? What are two types of Intent?
-   * Intents define the intention of an Application. S simple message object which is used to transfer data between activities.
+1. #### What is Intent? What are two types of Intent?
+
+   - Intents define the intention of an Application.
+   - A simple message object which is used to transfer data between activities.
    
-   * **explicit intent**: used to launch a specific application component
+2. #### What are two types of Intent?
+    
+   - **explicit intent**: used to launch a specific application component
 
      ```kotlin
-     Intent intent = Intent(Intent.ACTION_VIEW)
+     val intent = Intent(getApplicationContext(), ActivityTwo::class.java)
+     startActivity(intent)
+     ```
+
+   
+   - **implicit intent**: specifies an action that can invoke any app on the device able to perform that action
+
+     ```kotlin
+     val intent = Intent(Intent.ACTION_VIEW)
      intent.setData(Uri.parse("https://google.com"))
      startActivity(intent)
      ```
-   
-   * **implicit intent**: specifies an action that can invoke any app on the device able to perform that action
-   
-     ```kotlin
-     Intent intent = Intent(getApplicationContext(), ActivityTwo::class.java);  
-     startActivity(intent);
-     ```
-   
-12. #### What is the difference between `intent`, `sticky intent`, and `pending intent`?
 
-   * intent: is a message-passing mechanism between components of android except for Content Provider
-   * Sticky Intent: Sticks with Android, for future broadcast listeners
-   * Pending Intent: Will be used when someone wants to fire an intent in the future and maybe at that time the app is not alive anymore.
+     
+3. #### What is the difference between `intent`, `sticky intent`, and `pending intent`?
 
-## Broadcast Receiver
+   * **intent**: is a message-passing mechanism between components of Android except for Content Provider
+   * **sticky intent**: Sticks with Android, for future broadcast listeners
+   * **pending intent**: Will be used when someone wants to fire an intent in the future and maybe at that time the app is not alive anymore.
+
+---
+
+
+### BroadcastReceiver
 
 1. #### What is a Broadcast Receiver? What kind of messages it can receive?
    * simply respond to broadcast messages from other applications or from the system itself
