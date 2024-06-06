@@ -16,27 +16,28 @@ From basic to advanced concepts, these Android questions will test your fundamen
 4. #### What are Android Runtime (ART) and Dalvik?
 
     Android Runtime (ART) and Dalvik are both execution environments for running Android applications, but they have some key differences:
-  
+
     - **Dalvik**: It was the default runtime environment used by Android devices up until version 4.4 KitKat. Dalvik utilizes a Just-In-Time (JIT) compiler, which means it compiles the code at runtime, as needed. This approach is efficient in terms of memory usage because only the parts of the code that are needed are compiled.
     - **ART**: Introduced as an experimental feature in KitKat and later becoming the default runtime in Android 5.0 Lollipop, ART uses an Ahead-Of-Time (AOT) compiler. With AOT, the entire application code is compiled during installation, which improves app performance, especially startup times, because the code is already compiled to native instructions that the device’s CPU can execute directly.
-  
+      
+
     Here are some of the features and differences between ART and Dalvik:
-  
+
     - **Compilation Approach**:
       - **Dalvik** compiles only the necessary parts of the code at runtime (JIT).
       - **ART** compiles the entire application code at install time (AOT).
-  
+      
     - **Performance**:
       - **Dalvik** may experience lag during execution as it compiles code on the fly.
       - **ART** provides faster execution of applications due to pre-compilation.
-  
+      
     - **Storage and Booting Time**:
       - **Dalvik** has a smaller memory footprint and boots faster compared to ART.
       - **ART** requires more storage space because it compiles the entire code during installation.
-  
+      
     - **Battery Performance and Garbage Collection**:
       - **ART** improves battery performance and has better garbage collection capabilities, leading to improved memory management
-     
+
     Both ART and Dalvik are compatible with running DEX (Dalvik Executable) bytecode, which is the format Android apps are compiled into. This means apps developed for Dalvik should generally work when running with ART, although some techniques that work on Dalvik do not work on ART.
 
 5. #### What is Context? What is the difference between Application Context and Activity Context?
@@ -68,7 +69,7 @@ From basic to advanced concepts, these Android questions will test your fundamen
 8. #### How to prevent the data from reloading and resetting when the screen is rotated?
 
     The most basic approach would be to use a combination of **ViewModels** and `onSaveInstanceState()`. (The potential next question is: How do we do that?)
-      
+    
     - Basics of `ViewModel`: A ViewModel is **LifeCycle-Aware.** In other words, a ViewModel will not be destroyed if its owner is destroyed for a configuration change (e.g. rotation). The new instance of the owner will just be re-connected to the existing ViewModel. So if you rotate an Activity three times, you have just created three different Activity instances, but you only have one ViewModel. So the common practice is to store data in the ViewModel class (since it persists data during configuration changes).
     - Using the `OnSaveInstanceState` to store small amounts of UI data. For instance, let’s say we have a search screen and the user has entered a query in the Edittext. This results in a list of items being displayed in the RecyclerView. Now if the screen is rotated, the ideal way to prevent resetting of data would be to store the list of search items in the ViewModel and the query text the user has entered in the OnSaveInstanceState method of the activity.
 
@@ -126,16 +127,25 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
    ![Android Activity Lifecycle](images/activity_lifecycle.png)
 
-2. #### `onSavedInstanceState()` and `onRestoreInstanceState()` in activity?**
+2. #### Explain how two activity lifecycle triggers when switching
 
-   - `onSaveInstanceState()` - is a method used to store data before pausing the activity.
-   
-   
+   ![Two Android Activity Lifecycle](images/two_activity_lifecycle.png)
+
+3. Explain how two activity lifecycle trigger when config change happens
+
+   ![Two Android Activity Config Change Lifecycle](images/two_activity_lifecycle_config_change.png)
+
+4. #### `onSavedInstanceState()` and `onRestoreInstanceState()` in activity?**
+
+   - `onSaveInstanceState()` - a callback method that is used to store data before stopping the activity.
+   - `onRestoreInstanceState()` - a callback method that is used to restore data stored before stopping at start
+
+
    - `OnRestoreInstanceState()` - When an activity is recreated after it was previously destroyed, we can recover the saved state from the Bundle that the system passes to the activity. Both the `onCreate()` and `onRestoreInstanceState()` callback methods receive the same Bundle that contains the instance state information. But because the `onCreate()` method is called whether the system is creating a new instance of your activity or recreating a previous one, you must check whether the state Bundle is `null` before you attempt to read it. If it is null, then the system is creating a new instance of the activity, instead of restoring a previous one that was destroyed.
-   
-3. #### How does the activity respond when the user rotates the screen?
 
-   - When the screen is rotated, the current instance of activity is destroyed a new instance of the Activity is created in the new orientation. The onRestart() method is invoked first when a screen is rotated. The other lifecycle methods get invoked in the similar flow as they were when the activity was first created.
+4. #### How does the activity respond when the user rotates the screen?
+
+   - When the screen is rotated, the current instance of the activity is destroyed a new instance of the Activity is created in the new orientation. The `onRestart()` method is invoked first when a screen is rotated. The other lifecycle methods get invoked in the same flow as they were when the activity was first created.
 
 
 4. #### How can we transfer objects between activities?
