@@ -16,6 +16,7 @@ I want you to know that contributions and improvements are welcome.
 * [Android Libraries Quesions](ANDROID_LIBRARIES.md)
 * [Architecture Design Quesions](ARCHITECTURE_DESIGN.md)
 * [Tests Quesions](TESTS.md)
+* [Time Complexity](COMPLEXITY.md)
 
 ## References
 
@@ -24,6 +25,7 @@ I want you to know that contributions and improvements are welcome.
 * [Interview questions on Android Jetpack Compose](https://medium.com/@sujathamudadla1213/interview-questions-on-android-jetpack-compose-a9a28759ef11)
 * [Android interview prep in 2023](https://levelup.gitconnected.com/android-interview-prep-in-2023-part-1-40e38b2531b)
 * [Kotlin Android Interview Questions](https://blog.mindorks.com/kotlin-android-interview-questions)
+* [Big O Cheat Sheet – Time Complexity Chart](https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/)
 
 ## License
 
