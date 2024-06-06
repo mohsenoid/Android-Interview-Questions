@@ -29,9 +29,9 @@
    ```kotlin
    var name: String = "Some string"
    name = null // compile time error
-   ```
+  ` ``
 
-   So, to assign null values to a variable, you need to declare the `name `variable as a nullable string and then during the access of this variable, you need to use a safe call operator i.e. `?.`
+   So, to assign null values to a variable, you need to declare the `name` variable as a nullable string and then during the access of this variable, you need to use a safe call operator i.e. `?.`
 
    ```kotlin
    var name: String? = "Some string"
@@ -41,7 +41,7 @@
 
 6. #### What is the difference between safe calls(?.) and double-bang operator(!!)?
 
-   Safe call operator i.e. `?. `is used to check if the value of the variable is null or not. If it is null then null will be returned otherwise it will return the desired value.
+   Safe call operator i.e. `?.` is used to check if the value of the variable is null or not. If it is null then null will be returned otherwise it will return the desired value.
 
    ```kotlin
    var name: String? = "Some string"
@@ -50,7 +50,7 @@
    println(name?.length) // null
    ```
 
-   If you want to throw NullPointerException when the value of the variable is null, then you can use the null check or `!! `operator.
+   If you want to throw NullPointerException when the value of the variable is null, then you can use the null check or `!!` operator.
 
    ```kotlin
    var name: String? = "Some string"
@@ -73,7 +73,7 @@
    println(nameLength)
    ```
 
-   The Elvis operator( `?: `) used above will return the length of name if the value is not null otherwise if the value is null, then it will return `-1 `.
+   The Elvis operator( `?:` ) used above will return the length of name if the value is not null otherwise if the value is null, then it will return `-1`.
 
 9. #### What is a data class in Kotlin?
 
@@ -83,13 +83,13 @@
    data class Employee(val name: String, val age: Int)
    ```
 
-   When we mark a class as a *data* class, you don’t have to implement or create the following functions like we do in Java: `hashCode() `, `equals() `, `toString() `, `copy() `. The compiler automatically creates these internally, so it also leads to clean code. However, there are a few other requirements that data classes need to fulfill.
+   When we mark a class as a *data* class, you don’t have to implement or create the following functions like we do in Java: `hashCode()`, `equals()` , `toString()` , `copy()`. The compiler automatically creates these internally, so it also leads to clean code. However, there are a few other requirements that data classes need to fulfill.
 
 10. #### What is the use of `@JvmStatic`, `@JvmOverloads`, and` @JvmFiled` annotations in Kotlin?
 
    - `@JvmStatic`: This annotation is used to tell the compiler that the method is a static method and can be used in Java code.
-   - `@JvmOverloads`: To use the default values passed as an argument in Kotlin code from the Java code, we need to use the `@JvmOverloads `annotation.
-   - `@JvmField`: To access the fields of a Kotlin class from Java code without using any getters and setters, we need to use the `@JvmField `in the Kotlin code.
+   - `@JvmOverloads`: To use the default values passed as an argument in Kotlin code from the Java code, we need to use the `@JvmOverloads` annotation.
+   - `@JvmField`: To access the fields of a Kotlin class from Java code without using any getters and setters, we need to use the `@JvmField` in the Kotlin code.
 
 11. #### Can we use primitive types such as int, double, and float in Kotlin?
 
@@ -97,7 +97,7 @@
 
 12. #### What is String Interpolation in Kotlin?
 
-    If you want to use some variable or perform some operation inside a string then String Interpolation can be used. You can use the `$ `sign to use some variable in the string or can perform some operation in between `{} `sign.
+    If you want to use some variable or perform some operation inside a string then String Interpolation can be used. You can use the `$` sign to use some variable in the string or can perform some operation in between the `{}` sign.
 
     ```kotlin
     var name = "Mohsen"
@@ -106,7 +106,7 @@
 
 13. #### What do you mean by destructuring in Kotlin?
 
-    **Destructuring** is a convenient way of extracting multiple values from data stored in(possibly nested) objects and Arrays. It can be used in locations that receive data (such as the left-hand side of an assignment). Sometimes it is convenient to d *estructure* an object into a number of variables, for example:
+    **Destructuring** is a convenient way of extracting multiple values from data stored in(possibly nested) objects and Arrays. It can be used in locations that receive data (such as the left-hand side of an assignment). Sometimes it is convenient to *destructure* an object into several variables, for example:
 
     ```kotlin
     val (name, age) = employee
@@ -121,7 +121,7 @@
 
 14. #### When to use the `lateinit` keyword in Kotlin?
 
-    * `lateinit `is late initialization.
+    * `lateinit` is late initialization.
     * Normally, properties declared as having a non-null type must be initialized in the constructor. However, fairly often this is not convenient. Therefore by using `lateinit` developers promises the compiler that they will provide the value before using it for the first time.
     * For example, properties can be initialized through dependency injection, or in the setup method of a unit test. In this case, you cannot supply a non-null initializer in the constructor, but you still want to avoid null checks when referencing the property inside the body of a class. To handle this case, you can mark the property with the lateinit modifier.
     * You can check if the lateinit variable has been initialized or not before using it with the help of `isInitialized` method. This method will return true if the lateinit property has been initialized otherwise it will return false.
@@ -133,11 +133,11 @@
 
 16. #### Is there any difference between == operator and === operator?
 
-    Yes. The `== `operator is used to compare the values stored in variables and the `=== `operator is used to check if the reference of the variables are equal or not. But in the case of primitive types, the `=== `operator also checks for the value and not reference.
+    Yes. The `==` operator is used to compare the values stored in variables and the `===` operator is used to check if the reference of the variables are equal or not. But in the case of primitive types, the `===` operator also checks for the value and not reference.
 
 17. #### What is the forEach in Kotlin?
 
-    In Kotlin, to use the functionality of a for-each loop just like in Java, we use a `forEach `function.
+    In Kotlin, to use the functionality of a for-each loop just like in Java, we use a `forEach` function.
 
 18. #### What are companion objects in Kotlin?
 
@@ -171,7 +171,7 @@
 
 23. #### What are init blocks in Kotlin?
 
-    `init `blocks are initializer blocks that are executed just after the execution of the primary constructor. A class file can have one or more init blocks that will be executed in series. If you want to perform some operation in the primary constructor, then it is not possible in Kotlin, for that, you need to use the `init `block.
+    `init` blocks are initializer blocks that are executed just after the execution of the primary constructor. A class file can have one or more init blocks that will be executed in series. If you want to perform some operation in the primary constructor, then it is not possible in Kotlin, for that, you need to use the `init` block.
 
 24. #### What are the types of constructors in Kotlin?
 
@@ -188,7 +188,7 @@
 
 27. #### What is the difference between Launch and Async in Kotlin Coroutines?
 
-    The difference is that the `launch{} `does not return anything and the `async{} `returns an instance of `Deferred<T> `, which has an `await() `function that returns the result of the coroutine like we have future in Java in which we do `future.get() `to the get the result.
+    The difference is that the `launch{}` does not return anything and the `async{}` returns an instance of `Deferred<T>`, which has an `await()` function that returns the result of the coroutine like we have future in Java in which we do `future.get()` to the get the result.
 
     In other words:
 
