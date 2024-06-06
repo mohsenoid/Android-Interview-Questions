@@ -41,61 +41,54 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
 5. #### What is Context? What is the difference between Application Context and Activity Context?
 
-A **Context** is a handle to the system; it provides services like resolving resources, obtaining access to databases and preferences, and so on. An Android app has activities. Context is like a handle to the environment your application is currently running in.
+    A **Context** is a handle to the system; it provides services like resolving resources, obtaining access to databases and preferences, and so on.
 
-**Application Context**: This context is tied to the lifecycle of an application. The application context can be used where you need a context whose lifecycle is separate from the current context or when you are passing a context beyond the scope of an activity.
+    - **Application Context**: This context is tied to the lifecycle of an application. The application context can be used where you need a context whose lifecycle is separate from the current context or when you are passing a context beyond the scope of an activity.
+    - **Activity Context**: This context is available in an activity. This context is tied to the lifecycle of an activity. The activity context should be used when you are passing the context in the scope of an activity or you need the context whose lifecycle is attached to the current context.
 
-**Activity Context**: This context is available in an activity. This context is tied to the lifecycle of an activity. The activity context should be used when you are passing the context in the scope of an activity or you need the context whose lifecycle is attached to the current context.
+6. #### What are Android App components?
 
-5. #### What are the essential building blocks of an Android application (a.k.a **Android App components**)?
+    App components are the essential building blocks of an Android app. Each component is an entry point through which the system or a user can enter your app. Some components depend on others.
+    
+    There are different types of app components:
+    
+      - **Activities**: They dictate the UI and handle the user interaction with the smartphone screen.
+      - **Services**: They handle background processing associated with an application.
+      - **Broadcast Receivers**: They handle communication between Android OS and applications.
+      - **Content Providers**: They handle data and database management issues.
+      - **Intents**: Communication between the above-mentioned components is through Intents.
 
-App components are the essential building blocks of an Android app. Each component is an entry point through which the system or a user can enter your app. Some components depend on others.
-
-There are different types of app components:
-
-   * **Activities**: They dictate the UI and handle the user interaction to the smartphone screen.
-   * **Services**: They handle background processing associated with an application.
-   * **Broadcast Receivers**: They handle communication between Android OS and applications.
-   * **Content Providers**: They handle data and database management issues.
-   * **Intents**: Communication between the above-mentioned components is through Intents.
-
-6. #### What are the Android launch modes?
+7. #### What are the Android launch modes?
 
    - **standard (default)**: The system always creates a new instance of the activity in the target task and routes the intent to it.
-
-
-   - **singleTop**: If an instance of the activity already exists at the top of the target task, the system routes the intent to that instance through a call to its onNewIntent() method, rather than creating a new instance of the activity.
-
-
-   - **singleTask**: The system creates the activity at the root of a new task and routes the intent to it. However, if an instance of the activity already exists, the system routes the intent to the existing instance through a call to its onNewIntent() method, rather than creating a new one.
-
-
+   - **singleTop**: If an instance of the activity already exists at the top of the target task, the system routes the intent to that instance through a call to its `onNewIntent()` method, rather than creating a new instance of the activity.
+   - **singleTask**: The system creates the activity at the root of a new task and routes the intent to it. However, if an instance of the activity already exists, the system routes the intent to the existing instance through a call to its `onNewIntent()` method, rather than creating a new one.
    - **singleInstance**: Same as "singleTask", except that the system doesn't launch any other activities into the task holding the instance. The activity is always the single and only member of its task.
 
-7. #### How to prevent the data from reloading and resetting when the screen is rotated?
+8. #### How to prevent the data from reloading and resetting when the screen is rotated?
 
-   - The most basic approach would be to use a combination of **ViewModels** and `onSaveInstanceState()` . So how we do we that?
-   - Basics of ViewModel: A ViewModel is **LifeCycle-Aware.** In other words, a ViewModel will not be destroyed if its owner is destroyed for a configuration change (e.g. rotation). The new instance of the owner will just re-connected to the existing ViewModel. So if you rotate an Activity three times, you have just created three different Activity instances, but you only have one ViewModel.
-   - So the common practice is to store data in the ViewModel class (since it persists data during configuration changes) and use OnSaveInstanceState to store small amounts of UI data.
-   - For instance, let’s say we have a search screen and the user has entered a query in the Edittext. This results in a list of items being displayed in the RecyclerView. Now if the screen is rotated, the ideal way to prevent resetting of data would be to store the list of search items in the ViewModel and the query text user has entered in the OnSaveInstanceState method of the activity.
+    The most basic approach would be to use a combination of **ViewModels** and `onSaveInstanceState()`. (The potential next question is: How do we do that?)
+      
+    - Basics of `ViewModel`: A ViewModel is **LifeCycle-Aware.** In other words, a ViewModel will not be destroyed if its owner is destroyed for a configuration change (e.g. rotation). The new instance of the owner will just be re-connected to the existing ViewModel. So if you rotate an Activity three times, you have just created three different Activity instances, but you only have one ViewModel. So the common practice is to store data in the ViewModel class (since it persists data during configuration changes).
+    - Using the `OnSaveInstanceState` to store small amounts of UI data. For instance, let’s say we have a search screen and the user has entered a query in the Edittext. This results in a list of items being displayed in the RecyclerView. Now if the screen is rotated, the ideal way to prevent resetting of data would be to store the list of search items in the ViewModel and the query text the user has entered in the OnSaveInstanceState method of the activity.
 
-8. #### What is the difference between `Serializable` and `Parcelable`? Which is the best approach in Android?
+9. #### What is the difference between `Serializable` and `Parcelable`? Which is the best approach in Android?
 
    *	Serialization is the process of converting an object into a stream of bytes in order to store an object into memory, so that it can be recreated at a later time, while still keeping the object’s original state and data.
    * **How to disallow serialization?** We can declare the variable as transient.
    *	Serializable is a standard Java interface. Parcelable is an Android specific interface where you implement the serialization yourself. It was created to be far more efficient than Serializable (The problem with this approach is that reflection is used and it is a slow process. This mechanism also tends to create a lot of temporary objects and cause quite a bit of garbage collection.).
 
-9. #### What kind of modes of concurrency are in Android?
+10. #### What kind of modes of concurrency are in Android?
    * Threads
    * Async tasks
    * Services
    * Kotlin Coroutines
 
-10. #### Are you familiar with ProGuard?
+11. #### Are you familiar with ProGuard?
 
     * ProgGuard is a free obfuscation tool and DexGuard is the enterprise version of ProGuard.
 
-11. #### What is the difference between a process and a thread?
+12. #### What is the difference between a process and a thread?
 
     * A program in execution is often referred to as Process. A thread is a part of the process.
     * A process consists of multiple threads. A thread is the smallest part of the process that can execute concurrently with other threads of the process.
