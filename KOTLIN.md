@@ -352,43 +352,48 @@
 
    - `let`: It is used for executing a block of code with the object as its parameter. It’s often used for null checks and to avoid `NullPointerExceptions`. It returns the result of the lambda expression.
 
-   ```kotlin
-   val result = "Hello".let {
-       println(it) // Prints "Hello"
-       it.length   // Returns the length of the string
-   }
-   ```
+      ```kotlin
+      val result = "Hello".let {
+          println(it) // Prints "Hello"
+          it.length   // Returns the length of the string
+      }
+      ```
    - `run`: Similar to let, but within its block, the object is referred to as `this`. It’s useful when you want to call multiple methods on an object or perform operations on it.
 
-   ```Kotlin
-   val result = "Hello".run {
-       println(this) // Prints "Hello"
-       length        // Returns the length of the string
-   }
-   ```
+      ```Kotlin
+      val result = "Hello".run {
+          println(this) // Prints "Hello"
+          length        // Returns the length of the string
+      }
+      ```
+      
    - `with`: It’s a non-extension function that takes the context object as an argument. It’s useful when you’re calling multiple methods on the same object.
-   ```Kotlin
-   val numbers = mutableListOf("one", "two", "three")
-   with(numbers) {
-       println("The list elements are: $this")
-       println("The size of the list is: ${size}")
-   }
-   ```
+
+      ```Kotlin
+      val numbers = mutableListOf("one", "two", "three")
+      with(numbers) {
+          println("The list elements are: $this")
+          println("The size of the list is: ${size}")
+      }
+      ```
+      
    - `also`: It’s used when you want to perform additional operations on an object while keeping the object unmodified. It returns the original object.
-   ```Kotlin
-   val numbers = mutableListOf("one", "two", "three")
-   numbers.also {
-       println("The list elements are: $it")
-   }.add("four")
-   ```
+   
+      ```Kotlin
+      val numbers = mutableListOf("one", "two", "three")
+      numbers.also {
+          println("The list elements are: $it")
+      }.add("four")
+      ```
+
    - `apply`: This function is used to configure an object. The object is available as `this` inside the block. It returns the object itself after the configuration is done.
 
-   ```Kotlin
-   val person = Person().apply {
-       name = "John Doe"
-       age = 25
-   }
-   ```
+      ```Kotlin
+      val person = Person().apply {
+          name = "John Doe"
+          age = 25
+      }
+      ```
 
 40. #### What are pair and triple in Kotlin?
 
