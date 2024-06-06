@@ -187,7 +187,7 @@
 
 26. #### What is suspend function in Kotlin Coroutines?
 
-    Suspend function is the building block of the Coroutines in Kotlin. Suspend function is a function that could be started, paused, and resume. To use a suspend function, we need to use the suspend keyword in our normal function definition.
+    The suspend function is the building block of the Coroutines in Kotlin. The suspend function is a function that can be started, paused, and resumed. To use a suspend function, we need to use the `suspend` keyword in our normal function definition.
 
 27. #### What is the difference between Launch and Async in Kotlin Coroutines?
 
