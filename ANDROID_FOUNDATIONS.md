@@ -5,6 +5,12 @@
 
 From basic to advanced concepts, these Android questions will test your fundamental knowledge.
 
+- [General](#General)
+- [Activity](#Activity)
+- [Fragment](#Fragment)
+- [Service](#Service)
+- [ContentProvider](#ContentProvider)
+
 ### General
 
 1. #### What’s new in the latest Android version?
