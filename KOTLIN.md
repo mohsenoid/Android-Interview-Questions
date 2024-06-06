@@ -167,10 +167,10 @@
 
     A visibility modifier or access specifier or access modifier is a concept that is used to define the scope of something in a programming language. In Kotlin, we have four visibility modifiers:
 
-    - **private:** visible inside that particular class or file containing the declaration.
-    - **protected:** visible inside that particular class or file and also in the subclass of that particular class where it is declared.
-    - **internal:** visible everywhere in that particular module.
-    - **public:** (default modifier in Kotlin) visible to everyone
+    - **private**: visible inside that particular class or file containing the declaration.
+    - **protected**: visible inside that particular class or file and also in the subclass of that particular class where it is declared.
+    - **internal**: visible everywhere in that particular module.
+    - **public** (default modifier in Kotlin): visible to everyone
 
 23. #### What are init blocks in Kotlin?
 
