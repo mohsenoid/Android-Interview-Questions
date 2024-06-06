@@ -1,10 +1,12 @@
 # Android Interview Questions
 ![Android Interview Questions](images/icon.png)
 
-This repository contains technical interview questions for Senior Android Developer positions that I have been asked or typically ask candidates. Contributions and improvements are welcome.
+This repository contains technical interview questions for Senior Android Developer positions I have been asked or typically ask candidates.
+
+I want you to know that contributions and improvements are welcome.
 
 ## Table of contents
-* [Preparations](PREPARATIONS.md)
+* [How to Prepare for the Interview](PREPARATIONS.md)
 * [General Questions](GENERAL.md)
 * [Object Oriented Programming Quesions](OOP.md)
 * [Java Programming Questions](JAVA.md)
@@ -17,8 +19,8 @@ This repository contains technical interview questions for Senior Android Develo
 
 ## References
 
-* My interviews
-* Those who contributed to this repo
+* My technical interviews since 2012
+* Interviews of those who contributed to this repo
 * [Interview questions on Android Jetpack Compose](https://medium.com/@sujathamudadla1213/interview-questions-on-android-jetpack-compose-a9a28759ef11)
 * [Android interview prep in 2023](https://levelup.gitconnected.com/android-interview-prep-in-2023-part-1-40e38b2531b)
 * [Kotlin Android Interview Questions](https://blog.mindorks.com/kotlin-android-interview-questions)

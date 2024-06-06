@@ -2,15 +2,16 @@
 ![Android Interview - Java Questions](images/java.png)
 
 ## Java Programming Questions
-1. #### Why is Java said to be platform independent?
+1. #### Why is Java said to be platform-independent?
 
-   - The execution of the code does not depend upon the OS
+   - **WORA**: “write once, run anywhere”.
+   - Java code compiles into _bytecode_ that can run on any device equipped with a _Java Virtual Machine (JVM)_ independent from the OS.
 
-2. #### What are the differences between a `SparseArray` and `Hashmap`?
+2. #### What are the differences between the Android `SparseArray` and Java `Hashmap`?
 
-   * Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (HashMap <Integer, V>).
-   * is made to be memory efficient than using the regular HashMap
-   * It is generally slower than a traditional HashMap
+   * Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (similar to HashMap <Integer, V>).
+   * It Is made to be more memory efficient than using the regular HashMap.
+   * It is generally slower than a traditional HashMap.
 
 3. #### What are the differences between a `LinkedList` vs `ArrayList`?
    * two different implementations of the List interface
@@ -19,11 +20,11 @@
    * LinkedList is better for working with stacks mostly, or when working with buffers.
    * ArrayList is best for working with indexes.
 
-4. #### What is the difference between HashSet, HashMap and Hashtable? How do they behave in a multi-threaded environment?
+4. #### What is the difference between HashSet, HashMap, and Hashtable? How do they behave in a multi-threaded environment?
 
    - ##### Hashtable
 
-   Hashtable is basically a data structure to retain values of key-value pair.
+   Hashtable is a data structure to retain values of key-value pairs.
 
    - It does not allow null for both key and value. It will throw NullPointerException.
    - Hashtable does not maintain insertion order. The order is defined by the Hash function. So only use this if you do not need data in order.
@@ -45,7 +46,7 @@
 
    - ##### HashMap
 
-     Like Hashtable it also accepts key value pair.
+     Like Hashtable it also accepts key-value pairs.
 
      - It allows null for both key and value.
      - HashMap does not maintain insertion order. The order is defined by the Hash function.
@@ -98,66 +99,72 @@
 9. #### What is a generic in java?
    * Stronger type checks at compile time. A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety.
 
-11. #### Why should the equals() and hashCode() methods often be overridden together?
+10. #### Why should the equals() and hashCode() methods often be overridden together?
 
-12. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
+11. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
    * Yes!
 
-13. #### Explain method overloading & overriding.
+12. #### Explain method overloading & overriding.
 
-14. #### What is Java's Garbage Collection and how does it help you as a developer? Can two objects be garbage collected if they reference to each other?
+13. #### What is Java's Garbage Collection and how does it help you as a developer? Can two objects be garbage collected if they reference to each other?
    *  Cyclic dependencies without any live external reference are also eligible for GC.
 
-15. #### Why are Array and ArrayList different? When would you use each?
+14. #### Why are Array and ArrayList different? When would you use each?
    * Resizable: Array is static in size that is fixed length data structure, One can not change the length after creating the Array object. ArrayList is dynamic in size.
-   * Multi-dimensional: Array can be multi dimensional , while ArrayList is always single dimensional.
+   * Multi-dimensional: Array can be multi dimensional , while ArrayList is always single-dimensional.
    * Primitives:  ArrayList can not contains primitive data types (like int , float , double) it can only contains Object while Array can contain both primitive data types as well as objects.
 
-16. #### What is a `ThreadPool`? Is it better than using several "simple" `Thread`s?
+15. #### What is a `ThreadPool`? Is it better than using several "simple" `Thread`s?
    * ThreadPool: represents a group of worker threads that are waiting for the job and reuse many times.
    * Using ThreadPool minimizes the overhead due to thread creation. Thread objects use a significant amount of memory, and in a large-scale application, allocating and deallocating many thread objects creates a significant memory management overhead.
 
-17. #### What are strong, soft and weak references in Java?
+16. #### What are strong, soft, and weak references in Java?
    * Strong Reference: is the default Reference Object of a type/class
    * Weak Reference: When an object in memory is reachable only by Weak Reference Objects, it becomes automatically eligible for GC.
-   * Soft Reference: Object is basically a weak Reference Object that remains in memory a bit more: normally, it resists GC cycle until memory is available and there is no risk of OutOfMemoryError
+   * Soft Reference: Object is basically a weak Reference Object that remains in memory a bit more: normally, it resists the GC cycle until memory is available and there is no risk of OutOfMemoryError
 
-18. #### What does the keyword synchronized mean?
-   * synchronized: is one of the tools that make your code thread safe.
+17. #### What does the keyword synchronized mean?
+   * synchronized: is one of the tools that make your code thread-safe.
    * synchronized methods can't be called in the same time from multiple threads.
 
-19. #### What are `transient` and `volatile` modifiers?
+18. #### What are `transient` and `volatile` modifiers?
    * transient: modifier tells the Java object serialization subsystem to exclude the field when serializing an instance of the class
    * volatile: modifier tells the JVM that writes to the field should always be synchronously flushed to memory, and that reads of the field should always read from memory.
 
-20. #### How to implement thread safe counter.
+19. #### How to implement thread-safe counter.
    * Use AtomicInteger.
 
-21. #### What are the states of Thread in Java?
+20. #### What are the states of Thread in Java?
    * New, Runnable, Blocked, Waiting, TimedWaiting, Terminated.
 
-22. #### How to make object thread safe without synchronisation?
-   * Make it immutable.
+21. #### How to make object thread-safe without synchronisation?
+   * **Immutable Objects**: If an object doesn’t have any mutable state, it’s inherently thread-safe. Once created, its state cannot change, so there’s no need for synchronization.
+   * **Thread-Local Storage**: Use ThreadLocal variables when you need to maintain state that is unique to a thread. This way, each thread has its own instance of a variable, and no synchronization is needed.
+   * **Concurrent Collections**: Utilize the concurrent collections from the java.util.concurrent package, such as ConcurrentHashMap, which are designed to handle concurrent access without explicit synchronization.
+   * **Atomic Variables**: Use atomic variables from the java.util.concurrent.atomic package, like AtomicInteger or AtomicReference, which provide methods that are thread-safe without synchronization.
+   * **Volatile Fields**: Declare fields as volatile to ensure that every thread sees the most recent write to the field. However, note that volatile only guarantees visibility, not atomicity.
+   * **Coroutines** (Kotlin Specific): In Kotlin, you can use coroutines with shared mutable state carefully, employing mechanisms like Mutex for mutual exclusion without traditional locking.
+   * **UI Thread** (Android Specific): For Android, use methods like Activity.runOnUiThread(Runnable) or View.post(Runnable) to perform actions on the UI thread safely.
 
-23. #### Explain how wait/notify mechanism works.
+22. #### Explain how wait/notify mechanism works.
 
-24. #### Describe implementation of HashMap. What is collision? Difference between HashSet and TreeSet?
+23. #### Describe the implementation of HashMap. What is collision? Difference between HashSet and TreeSet?
 
-25. #### Whether static method can use nonstatic members?
+24. #### Whether static method can use nonstatic members?
 - NO
 
-26. #### Do objects get passed by reference or value in Java?
+25. #### Do objects get passed by reference or value in Java?
    * In Java all primitives and objects are passed by value, meaning that their copy will be manipulated in the receiving method. But there is a caveat - when you pass an object reference into a method, a copy of this reference is made, so it still points to the same object! This means, that any changes that you make inside this object are retained, when the method exits.
 
-27. #### What is the difference between instantiation and initialization of an object?
+26. #### What is the difference between instantiation and initialization of an object?
    * Initialization: is the process of the memory allocation, when a new variable is created.
    * Instantiation: is the process of explicitly assigning definitive value to a declared variable.
 
-28. #### What is GC (garbage collector)? How does it work?
+27. #### What is GC (garbage collector)? How does it work?
    * All objects are allocated on the heap area managed by the JVM. As long as an object is being referenced, the JVM considers it alive. Once an object is no longer referenced and therefore is not reachable by the application code, the garbage collector removes it and reclaims the unused memory.
 
-29. #### What is volatile modifier?
+28. #### What is volatile modifier?
    * The Java volatile keyword is used to mark a Java variable as "being stored in main memory", and not from the CPU cache.
 
-30. #### What is `transient` modifier?
+29. #### What is `transient` modifier?
    * keyword is used in serialization. If you define any data member as transient, it will not be serialized.
