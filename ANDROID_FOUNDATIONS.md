@@ -74,29 +74,51 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
 9. #### What is the difference between `Serializable` and `Parcelable`? Which is the best approach in Android?
 
-   *	Serialization is the process of converting an object into a stream of bytes in order to store an object into memory, so that it can be recreated at a later time, while still keeping the object’s original state and data.
-   * **How to disallow serialization?** We can declare the variable as transient.
-   *	Serializable is a standard Java interface. Parcelable is an Android specific interface where you implement the serialization yourself. It was created to be far more efficient than Serializable (The problem with this approach is that reflection is used and it is a slow process. This mechanism also tends to create a lot of temporary objects and cause quite a bit of garbage collection.).
+   - **Serialization**
+       - is the process of converting an object into a stream of bytes to store an object in memory, so that it can be recreated at a later time, while still keeping the object’s original state and data.
+       - The problem with this approach is that reflection is used and it is a slow process and therefore is not efficient.
+   - **Serializable**
+       - is an Android-specific interface where you implement the serialization yourself.
+       - It was created to be far more efficient than Serializable.
 
-10. #### What kind of modes of concurrency are in Android?
-   * Threads
-   * Async tasks
-   * Services
-   * Kotlin Coroutines
+10. #### How to disallow serialization?
+    We can declare the variable as `transient`.
 
-11. #### Are you familiar with ProGuard?
+11. #### What kind of modes of concurrency are in Android?
+   - Threads
+   - Async tasks
+   - Services
+   - Kotlin Coroutines
 
-    * ProgGuard is a free obfuscation tool and DexGuard is the enterprise version of ProGuard.
+12. #### Are you familiar with ProGuard/DexGuard/R8 Minification?
 
-12. #### What is the difference between a process and a thread?
+    ProGuard, DexGuard, and R8 are tools used in Android development to optimize and protect the application code. Here’s a brief overview of each:
 
-    * A program in execution is often referred to as Process. A thread is a part of the process.
-    * A process consists of multiple threads. A thread is the smallest part of the process that can execute concurrently with other threads of the process.
-    * A process is sometimes referred to as “Task”. A thread is often referred to as a “Lightweight” process.
-    * A process has its own address space. A thread uses the process’s address space and shares it with the other threads of that process.
-    * A thread can communicate with other threads (of the same process) directly by using methods like wait(), notify(), notifyAll(). A process can communicate with another process by using inter-process communication (IPC/AIDL).
-    * New threads are easily created. However, the creation of new processes requires duplication of the parent process.
-    * Threads have control over the other threads of the same process. A process does not have control over the sibling process, it has control over its child processes only.
+    - **ProGuard**: It is an open-source tool that shrinks, optimizes, and obfuscates Java code. It removes unused code and resources, making the APK smaller. ProGuard also makes the code more difficult to reverse-engineer by renaming classes, fields, and methods with non-descriptive names.
+    - **DexGuard**: A commercial tool that offers more advanced protection features than ProGuard. It provides stronger encryption and obfuscation techniques, and it can also protect against static and dynamic analysis, making it harder for attackers to tamper with or reverse-engineer the application.
+    - **R8**: The latest official code shrinker and minifier from Google, which is integrated into Android Studio. R8 combines shrinking, desugaring, dexing, and obfuscation into one step. It’s designed to be backward-compatible with ProGuard, meaning it can use ProGuard configuration files. R8 improves build times and results in smaller APK sizes compared to ProGuard.
+
+13. #### What is the difference between a process and a thread?
+
+    - **Process**:
+        - Runs in its own instance of the virtual machine.
+        - Contains components like activities, services, and broadcast receivers.
+        - Can be specified to run certain components in separate processes via `AndroidManifest.xml`.
+        - Managed by the Android system, which may shut down processes to conserve resources.
+        - Each process is isolated from others, ensuring that one process does not interfere with another.
+
+    - **Thread**:
+        - The smallest unit of execution within a process.
+        - The main thread handles UI and event dispatching.
+        - Additional threads can be created for background work.
+        - Threads within the same process share the same memory space
+
+15. #### What is the difference between a process and a task?
+
+    - A **process** is about the execution and management of resources at the system level.
+    - A **task** is about the user’s journey through a sequence of activities within or across applications.
+
+---
 
 ### Activity
 
@@ -124,6 +146,9 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
    - `commit()`: writes the data synchronously and returns a boolean value of success or failure depending on the result immediately.
    - `apply()`: is asynchronous and it won’t return any boolean response. Also if there is an apply() outstanding and we perform another commit(). The commit() will be blocked until the apply() is not completed.
+
+---
+
 ## Fragment
 
 1. #### Explain the Fragment Lifecycle?
@@ -151,8 +176,9 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
    - Dialogs are entirely dependent on Activities. If the screen is rotated, the dialog is dismissed. Dialog fragments take care of orientation, configuration changes as well.
 
+---
 
-## Service
+### Service
 
 1. #### What is the difference between `Service` & `IntentService`?
    * IntentService is used for short tasks and a Service is for long ones
@@ -199,7 +225,9 @@ From basic to advanced concepts, these Android questions will test your fundamen
    * simply respond to broadcast messages from other applications or from the system itself
    * must be Created and Registered within manifest or programmatically
 
-## ContentProvider
+---
+
+### ContentProvider
 
 1. #### What is ContentProvider?
    * They encapsulate data and provide it to applications through the single ContentResolver interface.
