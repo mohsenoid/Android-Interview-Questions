@@ -164,21 +164,26 @@ From basic to advanced concepts, these Android questions will test your fundamen
    ![Two Android Activity Config Change Lifecycle](images/two_activity_lifecycle_config_change.png)
 
 4. #### We have 3 Activities (A, B, and C which is transparent) explain what is the sequence of lifecycle methods execution if we 1) go from A to B, 2) then B to C, 3) Rotate the phone, 4) press back to B, 5) press back to A!!?
- 
+
 5. #### `onSavedInstanceState()` and `onRestoreInstanceState()` in activity?**
 
    - `onSaveInstanceState()` - a callback method that is used to store data before stopping the activity.
    - `OnRestoreInstanceState()` - When an activity is recreated after it was previously destroyed, we can recover the saved state from the Bundle that the system passes to the activity. Both the `onCreate()` and `onRestoreInstanceState()` callback methods receive the same Bundle that contains the instance state information. But because the `onCreate()` method is called whether the system is creating a new instance of your activity or recreating a previous one, you must check whether the state Bundle is `null` before you attempt to read it. If it is null, then the system is creating a new instance of the activity, instead of restoring a previous one that was destroyed.
 
-6. #### How does the activity respond when the user rotates the screen?
+6. #### On which activity lifecycle step the activity is visible on the screen?
+
+   - `onStart()`: Called when the activity is becoming visible to the user.
+   - `onResume()`: Called when the activity will start interacting with the user. At this point, your activity is at the top of the activity stack, with user input going to it.
+
+7. #### How does the activity respond when the user rotates the screen?
 
    - When the screen is rotated, the current instance of the activity is destroyed a new instance of the Activity is created in the new orientation. The `onRestart()` method is invoked first when a screen is rotated. The other lifecycle methods get invoked in the same flow as they were when the activity was first created.
 
-7. #### How can we transfer objects between activities?
+8. #### How can we transfer objects between activities?
 
    * Parcelable which is better for Android apps than Serializable which uses reflection
 
-8. #### What’s the difference between commit() and apply() in SharedPreferences?
+9. #### What’s the difference between commit() and apply() in SharedPreferences?
 
    - `commit()`: writes the data synchronously and returns a boolean value of success or failure depending on the result immediately.
    - `apply()`: is asynchronous and it won’t return any boolean response. Also if there is an apply() outstanding and we perform another commit(). The commit() will be blocked until the apply() is not completed.
@@ -240,7 +245,7 @@ From basic to advanced concepts, these Android questions will test your fundamen
    - A simple message object which is used to transfer data between activities.
    
 2. #### What are two types of Intent?
-    
+   
    - **explicit intent**: used to launch a specific application component
 
      ```kotlin
@@ -257,7 +262,6 @@ From basic to advanced concepts, these Android questions will test your fundamen
      startActivity(intent)
      ```
 
-     
 3. #### What is the difference between `intent`, `sticky intent`, and `pending intent`?
 
    * **intent**: is a message-passing mechanism between components of Android except for Content Provider

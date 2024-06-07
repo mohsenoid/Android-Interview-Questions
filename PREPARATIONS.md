@@ -70,3 +70,15 @@ The best answers will include clear, concise information covering the following:
 - **Action**: The candidate describes the actions they took or decisions they made to work through their tasks and goals – including how they overcame any specific challenges. This gives the interviewer insight into the candidate’s problem-solving abilities, working style, decision-making abilities, and more. 
 
 - **Result**: The applicant defines the outcomes and results of their actions. These could be either positive or negative. They help show the interviewer the impact or value the candidate added to the task or how they rectified a negative outcome. This stage in the method provides an excellent opportunity for candidates to discuss any quantifiable impact they made – for instance, increasing sales by 2%. 
+
+## Ask questions at the end
+
+Asking questions at the end of an interview is a great opportunity to show your interest in the company and the role. Here are some thoughtful questions you might consider:
+
+1. **How would you describe the company’s culture?** This can give you insight into the work environment and whether it aligns with your expectations.
+2. **What is your favorite thing about working for this company?** It’s a personal question that can help you connect with the interviewer and learn what employees value about the workplace.
+3. **How do you see this company evolving over the next five years?** This shows you’re thinking long-term and are interested in how the company grows, which can be important for your career trajectory.
+4. **How do you think the company defines and demonstrates its values?** This question can reveal how deeply the company’s values are embedded into their operations and if they align with your own values.
+5. **What qualities and attributes make for a successful employee in this company?** Understanding what the company values in its employees can help you determine if you’d be a good fit.
+
+Remember to tailor your questions to reflect your genuine interests and concerns about the role and the company. It’s also a good practice to prepare a few questions in advance, so you’re ready when the opportunity arises. Good luck with your interview!
