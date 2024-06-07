@@ -26,6 +26,7 @@ I want you to know that contributions and improvements are welcome.
 * [Android interview prep in 2023](https://levelup.gitconnected.com/android-interview-prep-in-2023-part-1-40e38b2531b)
 * [Kotlin Android Interview Questions](https://blog.mindorks.com/kotlin-android-interview-questions)
 * [Big O Cheat Sheet – Time Complexity Chart](https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/)
+* [How to use the STAR method for interviews](https://www.testgorilla.com/blog/star-method-interviews/)
 
 ## License
 

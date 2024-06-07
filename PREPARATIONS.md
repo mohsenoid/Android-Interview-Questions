@@ -52,3 +52,21 @@ Here are some tips to keep in mind:
 ❌ Don't try to oversell yourself or pretend to be someone you're not.
 
 ❌ Don't get distracted easily (for instance thinking about the previous question) and forget to to listen and engage with the interviewer.
+
+## Practice the STAR method
+
+The STAR interview format is a behavioral interviewing technique employers use during hiring. “**STAR**” stands for **S**ituation, **T**ask, **A**ction, and **R**esult. 
+
+The method is designed to bring a structured and focused approach to interviewing and primarily focuses on a candidate’s working styles, behavioral attributes, and competencies. 
+
+STAR method interview questions usually focus on asking candidates for concrete examples of situations they’ve encountered in their past experiences – either in a work or educational setting. Questions typically start with phrases like “Describe a situation where,” “Tell me about a time you had to,” or “Share an example of when you.”
+
+The best answers will include clear, concise information covering the following:
+
+- **Situation**: The candidate describes the situation or context they were in, explaining the circumstances or challenges they faced.. 
+
+- **Task**: The applicant explains the specific task(s) they had to achieve in the situation described. This helps the interviewer to better understand the candidate’s roles and responsibilities in the scenario. 
+
+- **Action**: The candidate describes the actions they took or decisions they made to work through their tasks and goals – including how they overcame any specific challenges. This gives the interviewer insight into the candidate’s problem-solving abilities, working style, decision-making abilities, and more. 
+
+- **Result**: The applicant defines the outcomes and results of their actions. These could be either positive or negative. They help show the interviewer the impact or value the candidate added to the task or how they rectified a negative outcome. This stage in the method provides an excellent opportunity for candidates to discuss any quantifiable impact they made – for instance, increasing sales by 2%. 
