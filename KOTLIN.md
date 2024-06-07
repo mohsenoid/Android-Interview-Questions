@@ -29,7 +29,7 @@
    ```kotlin
    var name: String = "Some string"
    name = null // compile time error
-  ` ``
+    ` ``
 
    So, to assign null values to a variable, you need to declare the `name` variable as a nullable string and then during the access of this variable, you need to use a safe call operator i.e. `?.`
 
@@ -43,21 +43,21 @@
 
    Safe call operator i.e. `?.` is used to check if the value of the variable is null or not. If it is null then null will be returned otherwise it will return the desired value.
 
-   ```kotlin
-   var name: String? = "Some string"
-   println(name?.length) // 11
-   name = null
-   println(name?.length) // null
-   ```
+    ```kotlin
+    var name: String? = "Some string"
+    println(name?.length) // 11
+    name = null
+    println(name?.length) // null
+    ```
 
    If you want to throw NullPointerException when the value of the variable is null, then you can use the null check or `!!` operator.
 
-   ```kotlin
-   var name: String? = "Some string"
-   println(name?.length) // 11
-   name = null
-   println(name!!.length) // throws KotlinNullPointerException
-   ```
+    ```kotlin
+    var name: String? = "Some string"
+    println(name?.length) // 11
+    name = null
+    println(name!!.length) // throws KotlinNullPointerException
+    ```
 
 7. #### Do we have a ternary operator in Kotlin just like Java?
 
@@ -185,11 +185,15 @@
 
     A framework to manage concurrency in a more performant and simple way with its lightweight thread which is written on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
 
-26. #### What is suspend function in Kotlin Coroutines?
+26. **How do coroutines compare to threads?**
+
+    Coroutines are lighter than threads and consume less memory because they share a single thread’s resources. Unlike threads, they are not mapped to native threads and therefore don’t require context switching on the CPU, making them more efficient.
+
+27. #### What is `suspend` function in Kotlin Coroutines?
 
     The suspend function is the building block of the Coroutines in Kotlin. The suspend function is a function that can be started, paused, and resumed. To use a suspend function, we need to use the `suspend` keyword in our normal function definition.
 
-27. #### What is the difference between Launch and Async in Kotlin Coroutines?
+28. #### What is the difference between Launch and Async in Kotlin Coroutines?
 
     The difference is that the `launch{}` does not return anything and the `async{}` returns an instance of `Deferred<T>`, which has an `await()` function that returns the result of the coroutine like we have future in Java in which we do `future.get()` to the get the result.
 
@@ -198,13 +202,15 @@
     - launch: fire and forget
     - async: perform a task and return a result
 
-28. #### What are scopes in Kotlin Coroutines?
+29. #### **What is a `CoroutineScope`?** 
+
+    A `CoroutineScope` defines the scope for new coroutines. Every coroutine builder is an extension of `CoroutineScope` and inherits its context.
 
     - Scopes in Kotlin Coroutines are very useful because we need to cancel the background task as soon as the activity is destroyed.
     - In Android-specific projects, we should go with the custom scopes created by considering the LifeCycle of Activity, ViewModel, etc.
     - The scopes are present under the Kotlin extension libraries. Make sure to add the required dependencies to your project.
 
-29. #### How Exception Handling is done in Kotlin Coroutines?
+30. #### How Exception Handling is done in Kotlin Coroutines?
 
     - One way is to use a try-catch block
 
@@ -227,15 +233,32 @@
 
     - With `async`, use `coroutineScope` with the top-level `try-catch`, when you do **NOT** want to continue with other tasks if any of them have failed.
 
-30. #### What is the open keyword in Kotlin used for?
+31. #### **What is `withContext` and when would you use it?**
+
+    `withContext` is used to switch the context of a coroutine. It’s useful when you need to perform an operation on a different thread, like switching to the main thread for UI operations.
+
+32. #### **What is a `Flow` in Kotlin and how is it related to coroutines?**
+
+    `Flow` is a type that can emit multiple values sequentially, as opposed to `suspend` functions that return only a single value. `Flow` builds upon coroutines and provides a way to handle a stream of data asynchronously.
+
+33. #### What is the difference between coroutine context and coroutine scope?
+
+    The difference between coroutine context and coroutine scope in Kotlin is fundamental to understanding how coroutines work and are managed. Here’s a concise explanation:
+
+    - **Coroutine Context**: It is a set of rules and configurations that define the behavior of a coroutine, including its job, dispatcher, and other elements. The context controls where the coroutine runs (e.g., on which thread or threads), what job it’s associated with, and other aspects of its execution environment.
+    - **Coroutine Scope**: It provides a structured way to launch coroutines. It defines the lifecycle of coroutines; all coroutines launched within a scope are bound by its lifecycle. This means when the scope is canceled, all coroutines within it are also canceled. It’s a way to manage and control the execution of coroutines, ensuring that they don’t leak and are properly cleaned up when no longer needed.
+
+    In essence, the **context** is about the *configuration* of coroutines, while the **scope** is about the *lifecycle management* of coroutines. Both are crucial for writing robust concurrent code in Kotlin.
+
+34. #### What is the open keyword in Kotlin used for?
 
     By default, the classes and functions are final in Kotlin. So, you can't inherit the class or override the functions. To do so, you need to use the open keyword before the class and function.
 
-31. #### What are lambdas expressions?
+35. #### What are lambdas expressions?
 
     Lambdas expressions are anonymous functions that can be treated as values i.e. we can pass the lambdas expressions as arguments to a function return them, or do any other thing we could do with a normal object.
 
-32. #### What are Higher-Order functions in Kotlin?
+36. #### What are Higher-Order functions in Kotlin?
 
     Higher-order functions in Kotlin are functions that can accept other functions as parameters or return a function. They are a fundamental part of Kotlin’s support for functional programming and allow for more abstract and flexible code.
 
@@ -273,7 +296,7 @@
     val result = add(2, 2)
     ```
 
-33. #### What are extension functions in Kotlin?
+37. #### What are extension functions in Kotlin?
 
     Extension functions are like extensive properties attached to any class in Kotlin. By using extension functions, you can add some methods or functionalities to an existing class even without inheriting the class. For example: Let's say, we have views where we need to play with the visibility of the views. So, we can create an extension function for views like,
 
@@ -293,7 +316,7 @@
     toolbar.hide()
     ```
 
-34. #### What is an infix function in Kotlin?
+38. #### What is an infix function in Kotlin?
 
     An infix function is used to call the function without using any bracket or parenthesis. You need to use the infix keyword to use the infix function.
 
@@ -311,11 +334,11 @@
     }
     ```
 
-35. #### What is an inline function in Kotlin?
+39. #### What is an inline function in Kotlin?
 
     The inline function instructs the compiler to insert the complete body of the function wherever that function is used in the code. To use an Inline function, all you need to do is adding an inline keyword at the beginning of the function declaration.
 
-36. #### What is noinline in Kotlin?
+40. #### What is noinline in Kotlin?
 
     While using an inline function and want to pass some lambda functions and not all lambda functions as inline, then you can explicitly tell the compiler which lambda it shouldn't inline.
 
@@ -326,7 +349,7 @@
     }
     ```
 
-37. #### What are Reified types in Kotlin?
+41. #### What are Reified types in Kotlin?
 
     Reified types in Kotlin address a limitation of generics known as type erasure. Here’s what they are and how they work:
 
@@ -347,10 +370,10 @@
     }
     ```
 
-38. #### Explain the use-case of let, run, with, also, apply in Kotlin.
-   In Kotlin, let, run, with, also, and apply are known as scope functions. They are used to execute a block of code within the context of an object. These functions are particularly useful for keeping the code concise and maintaining a clean scope when working with objects. They help to avoid excessive use of temporary variables and provide a structured way to manipulate objects.
+42. #### Explain the use-case of let, run, with, also, apply in Kotlin.
+       In Kotlin, let, run, with, also, and apply are known as scope functions. They are used to execute a block of code within the context of an object. These functions are particularly useful for keeping the code concise and maintaining a clean scope when working with objects. They help to avoid excessive use of temporary variables and provide a structured way to manipulate objects.
 
-   - `let`: It is used for executing a block of code with the object as its parameter. It’s often used for null checks and to avoid `NullPointerExceptions`. It returns the result of the lambda expression.
+   - **`let`**: It is used for executing a block of code with the object as its parameter. It’s often used for null checks and to avoid `NullPointerExceptions`. It returns the result of the lambda expression.
 
       ```kotlin
       val result = "Hello".let {
@@ -358,7 +381,7 @@
           it.length   // Returns the length of the string
       }
       ```
-   - `run`: Similar to let, but within its block, the object is referred to as `this`. It’s useful when you want to call multiple methods on an object or perform operations on it.
+   - **`run`**: Similar to let, but within its block, the object is referred to as `this`. It’s useful when you want to call multiple methods on an object or perform operations on it.
 
       ```Kotlin
       val result = "Hello".run {
@@ -377,7 +400,7 @@
       }
       ```
       
-   - `also`: It’s used when you want to perform additional operations on an object while keeping the object unmodified. It returns the original object.
+   - **`also`**: It’s used when you want to perform additional operations on an object while keeping the object unmodified. It returns the original object.
    
       ```Kotlin
       val numbers = mutableListOf("one", "two", "three")
@@ -386,7 +409,7 @@
       }.add("four")
       ```
 
-   - `apply`: This function is used to configure an object. The object is available as `this` inside the block. It returns the object itself after the configuration is done.
+   - **`apply`**: This function is used to configure an object. The object is available as `this` inside the block. It returns the object itself after the configuration is done.
 
       ```Kotlin
       val person = Person().apply {

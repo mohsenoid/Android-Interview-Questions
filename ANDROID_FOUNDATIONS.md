@@ -147,6 +147,16 @@ From basic to advanced concepts, these Android questions will test your fundamen
 
 23. #### What is memory leak. How to test app for memory leaks.
 
+24. #### What is the difference or relation between Looper, Handler, and MessageQueue in Android?
+
+    **Looper**, **Handler**, and **MessageQueue** work together to manage tasks in a thread.
+
+    Here’s a brief overview of each and how they differ:
+
+    - **Looper**: A Looper is responsible for keeping a thread alive, looping through a MessageQueue, and dispatching messages to the corresponding Handler to process. It transforms a normal thread into a message loop, allowing it to handle messages until the application is running.
+    - **Handler**: This is a utility class that interacts with a Looper. It posts messages and Runnable objects to the MessageQueue associated with the Looper. Handlers are used to schedule messages and runnables to be executed at some point in the future; they can also enqueue an action to be performed on a different thread than your own.
+    - **MessageQueue**: It’s a queue that holds tasks called messages which should be processed. Each Looper has its own MessageQueue that it polls, and when a task is available, it’s sent to the Handler for execution.
+
 ---
 
 ### Activity
