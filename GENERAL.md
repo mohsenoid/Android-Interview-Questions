@@ -47,8 +47,16 @@ Most recruiters or HR teams ask these questions to assess your soft skills and e
 
 14. #### What is GitFlow? do you follow it?
 
-15. #### Describe Test-Driven Development (TDD).
+    - Gitflow is a Git branching model that uses long-lived feature branches and multiple primary branches. 
 
-16. #### Do you like to work on the Android app Backend (core) or UI (view)?
+15. #### What is trunk-based development?
 
-17. #### Teach me as a non-technical person something technical!?
+    - Trunk-based development is a version control management practice where developers merge small, frequent updates to a core “trunk” or main branch.
+
+    - Developers can create short-lived branches with a few small commits compared to other long-lived feature branching strategies.
+
+16. #### Describe Test-Driven Development (TDD).
+
+17. #### Do you like to work on the Android app Backend (core) or UI (view)?
+
+18. #### Teach me as a non-technical person something technical!?
