@@ -7,20 +7,56 @@
    - **WORA**: “write once, run anywhere”.
    - Java code compiles into _bytecode_ that can run on any device equipped with a _Java Virtual Machine (JVM)_ independent from the OS.
 
-2. #### What are the differences between the Android `SparseArray` and Java `Hashmap`?
+2. #### What are different data structures in java programming?
+
+   Java programming language offers a variety of data structures to store and manage data efficiently.
+
+   - **Linear Data Structures**:
+     - **Arrays**
+     	- A collection of elements of the same type stored in contiguous memory locations.
+     	- It has a fixed size. Once you define the number of elements it can hold, it cannot be changed.
+     	- Can hold both primitives (like int, char, etc.) and objects.
+     	- it is faster and more efficient for scenarios where the size is known and doesn’t change.
+     	- Does not have built-in methods for convenience operations like searching, sorting, etc., unless you use utility classes like Arrays.
+     - **ArrayList**
+       - Implementation of **List** interface
+       - A resizable array, which can grow as needed.
+       - It is dynamic in size. You can add or remove elements, and the ArrayList will resize itself automatically.
+       - Can only hold objects. Primitive types are autoboxed to their corresponding wrapper classes (like Integer, Character, etc.).
+       - Provides more flexibility with its dynamic resizing, but this can come with a performance cost during resizing operations as it may require creating a new array and copying elements from the old to the new one.
+       - Comes with many built-in methods for common operations like adding, removing, finding, and sorting elements, making it easier to work with.
+       - Preferred when you need to access list elements frequently, as it provides faster random access
+     - **LinkedList
+       - Implementation of **List** interface.
+       - Consists of elements where each element has a reference to the next element in the sequence.
+       - It uses a doubly linked list to store its elements. Each element (or node) contains a reference to both the previous and next nodes, which makes element addition and removal operations faster as there is no need to shift elements.
+       - It is faster for manipulating data, especially when you are adding or removing elements from the beginning or middle of the list, as it does not require shifting the rest of the elements.
+       - Each element holds both the data and two references (to the next and previous elements), which means it has a higher memory overhead.
+       - Preferred when your application involves a lot of insertion and deletion operations.
+     - **Stack**: A Last-In-First-Out (LIFO) data structure where the last element added is the first one to be removed.
+     - **Queue**: A First-In-First-Out (FIFO) data structure where the first element added is the first one to be removed.
+   - **Non-Linear Data Structures**:
+     - **Tree**: A hierarchical structure where each node can have multiple child nodes.
+     - **Graph**: Consists of a set of nodes connected by edges, representing relationships between elements.
+     - **HashMap**: A collection that stores key-value pairs and allows for fast retrieval based on the key.
+     - **HashSet**: A collection that does not allow duplicate elements and has no guaranteed order.
+     - **TreeMap**: A map implemented with a tree, where the keys are sorted in natural order.
+     - **TreeSet**: A set implemented with a tree, where the elements are sorted in natural order.
+
+3. #### What are the differences between the Android `SparseArray` and Java `Hashmap`?
 
    * Sparse arrays can be used to replace hash maps when the key is an Integer or a Long (similar to HashMap <Integer, V>).
    * It Is made to be more memory efficient than using the regular HashMap.
    * It is generally slower than a traditional HashMap.
 
-3. #### What are the differences between a `LinkedList` vs `ArrayList`?
+4. #### What are the differences between a `LinkedList` vs `ArrayList`?
    * two different implementations of the List interface
    * LinkedList implements it with a doubly-linked list.
    * ArrayList implements it with a dynamically re-sizing array.
    * LinkedList is better for working with stacks mostly, or when working with buffers.
    * ArrayList is best for working with indexes.
 
-4. #### What is the difference between HashSet, HashMap, and Hashtable? How do they behave in a multi-threaded environment?
+5. #### What is the difference between HashSet, HashMap, and Hashtable? How do they behave in a multi-threaded environment?
 
    - ##### Hashtable
 
@@ -80,28 +116,28 @@
      }
    ```
 
-5. #### What is a Deadlock In java?
+6. #### What is a Deadlock In java?
    * Deadlock describes a situation where two or more threads are blocked forever, waiting for each other.
 
-6. #### How we can avoid Deadlocks?
+7. #### How we can avoid Deadlocks?
    * Breaking circular wait condition: In order to do that, you can make arrangements in the code to impose the ordering on acquisition and release of locks.
    * Avoid Nested Locks: This is the most common reason for deadlocks, avoid locking another resource if you already hold one. It’s almost impossible to get a deadlock situation if you are working with only one object lock.
    * Lock Only What is Required: You should acquire lock only on the resources you have to work on, if we are only interested in one of its fields, then we should lock only that specific field, not complete object.
    * Avoid waiting indefinitely: You can get a deadlock if two threads are waiting for each other to finish indefinitely using thread join. If your thread has to wait for another thread to finish, it’s always best to use join with the maximum time you want to wait for the thread to finish.
 
-7. #### How do you manipulate strings in Java without creating String garbage?
+8. #### How do you manipulate strings in Java without creating String garbage?
    * Using StringBuilder and StringBuffer/StringBuilder
 
-8. #### What is the basic difference between String and StringBuffer?
+9. #### What is the basic difference between String and StringBuffer?
    * The string is an immutable object. StringBuffer is a mutable object.
    * StringBuffer is synchronized whereas StringBuilder is not synchronized.
 
-9. #### What is a generic in java?
+10. #### What is a generic in java?
    * Stronger type checks at compile time. A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety.
 
-10. #### Why should the equals() and hashCode() methods often be overridden together?
+11. #### Why should the equals() and hashCode() methods often be overridden together?
 
-11. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
+12. #### In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
    * Yes!
 
 12. #### Explain method overloading & overriding.
