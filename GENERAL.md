@@ -20,7 +20,7 @@ Most recruiters or HR teams ask these questions to assess your soft skills and e
    * [Medium.com](https://medium.com/)
    * [Android weekly newsletter](https://androidweekly.net/)
    * [Kotlin weekly newsletter](http://www.kotlinweekly.net/)
-   * [Android Develoepr Tips](https://youtube.com/AndroidDeveloeprTips)
+   * [Android Develoepr Tips](https://www.youtube.com/@AndroidDevelopers/videos)
    * [Droidcon.com](https://www.droidcon.com/)
    * [KotlinConf.com](https://kotlinconf.com/)
 
